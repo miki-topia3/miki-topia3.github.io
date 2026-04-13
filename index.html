@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bayleaf | 星詠み・アロマセラピー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ocean-deep:   #062a44;
+  --ocean-mid:    #0d5f8a;
+  --ocean-light:  #1a9bbf;
+  --aqua:         #3ecfbe;
+  --foam:         #d6f0f0;
+  --dawn-gold:    #f5c842;
+  --dawn-warm:    #f0a840;
+  --indigo:       #6b9bd6;
+  --white:        #f9fdfe;
+  --text-dark:    #062030;
+  --text-mid:     #2a5068;
+  --text-light:   #6aacbe;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(6, 42, 68, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(62, 207, 190, 0.15);
+  transition: background 0.4s;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 300; letter-spacing: 0.16em;
+  color: var(--foam); text-decoration: none;
+}
+.nav-logo span { color: var(--aqua); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.88rem; letter-spacing: 0.18em; color: rgba(214,240,240,0.78);
+  text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--aqua); }
+
+/* hamburger (mobile) */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 1px; background: var(--foam); transition: 0.3s; }
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 99;
+  background: rgba(6,42,68,0.97); flex-direction: column;
+  align-items: center; justify-content: center; gap: 40px;
+}
+.mobile-menu a {
+  font-size: 1.1rem; letter-spacing: 0.2em; color: var(--foam);
+  text-decoration: none; padding: 8px 0;
+}
+.mobile-menu.open { display: flex; }
+
+/* ─── HERO ─── */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(175deg, var(--ocean-deep) 0%, #0a4a72 45%, #0f7a9a 80%, #1ab8c0 100%);
+}
+
+/* wave layers */
+.wave-container {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 220px;
+  overflow: hidden;
+}
+.wave {
+  position: absolute; bottom: 0; left: -20%; width: 140%;
+  border-radius: 50% 50% 0 0;
+  animation: waveRise 8s ease-in-out infinite alternate;
+}
+.wave-1 { height: 100px; background: rgba(30,155,191,0.25); animation-delay: 0s; }
+.wave-2 { height: 75px; background: rgba(62,207,190,0.2); animation-delay: -2s; animation-duration: 6s; }
+.wave-3 { height: 50px; background: rgba(214,240,240,0.15); animation-delay: -4s; animation-duration: 10s; }
+
+@keyframes waveRise {
+  0% { transform: translateX(0) scaleY(1); }
+  100% { transform: translateX(-5%) scaleY(1.08); }
+}
+
+/* light rays */
+.light-rays {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; height: 65%;
+  background: conic-gradient(from -20deg at 50% 0%, transparent 15%, rgba(245,200,66,0.06) 20%, transparent 25%, transparent 35%, rgba(245,200,66,0.04) 40%, transparent 45%);
+  animation: rayShift 12s ease-in-out infinite alternate;
+}
+@keyframes rayShift { 0% { opacity: 0.6; } 100% { opacity: 1; } }
+
+/* floating particles */
+.particle {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, rgba(62,207,190,0.6), transparent);
+  animation: float linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-80vh) translateX(30px); opacity: 0; }
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 0 24px;
+  animation: fadeUp 1.2s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.3em; color: var(--aqua);
+  margin-bottom: 20px; font-weight: 300;
+  animation: fadeUp 1.2s 0.2s ease-out both;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 200; line-height: 1.35;
+  color: var(--foam); letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  animation: fadeUp 1.2s 0.35s ease-out both;
+}
+.hero-title em {
+  font-style: italic; color: var(--indigo);
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1em;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: rgba(214,240,240,0.85); letter-spacing: 0.1em;
+  line-height: 2.1; margin-bottom: 44px;
+  animation: fadeUp 1.2s 0.5s ease-out both;
+}
+.hero-cta {
+  display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 1.2s 0.7s ease-out both;
+}
+.btn-primary {
+  padding: 15px 38px; font-family: 'Noto Serif JP', serif;
+  font-size: 0.95rem; letter-spacing: 0.18em;
+  background: linear-gradient(135deg, var(--dawn-gold), var(--dawn-warm));
+  color: var(--ocean-deep); border: none; border-radius: 50px;
+  cursor: pointer; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(245,200,66,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,200,66,0.5); }
+.btn-outline {
+  padding: 15px 38px; font-family: 'Noto Serif JP', serif;
+  font-size: 0.95rem; letter-spacing: 0.18em;
+  background: transparent; color: var(--foam);
+  border: 1px solid rgba(214,240,240,0.4); border-radius: 50px;
+  cursor: pointer; text-decoration: none; transition: all 0.3s;
+}
+.btn-outline:hover { background: rgba(214,240,240,0.08); border-color: var(--aqua); color: var(--aqua); }
+
+/* SNS icons */
+.hero-sns {
+  display: flex; gap: 20px; justify-content: center; align-items: center;
+  margin-top: 32px;
+  animation: fadeUp 1.2s 0.85s ease-out both;
+}
+.sns-link {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(214,240,240,0.2); border-radius: 50%;
+  color: rgba(214,240,240,0.55);
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+.sns-link svg { width: 17px; height: 17px; }
+.sns-link:hover { color: var(--aqua); border-color: var(--aqua); transform: translateY(-2px); }
+
+/* scroll indicator */
+.scroll-hint {
+  position: absolute; bottom: 240px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(214,240,240,0.4); font-size: 0.65rem; letter-spacing: 0.2em;
+  animation: breathe 3s ease-in-out infinite;
+}
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(62,207,190,0.5), transparent); }
+@keyframes breathe { 0%,100%{opacity:0.4} 50%{opacity:0.9} }
+
+/* ─── SECTIONS ─── */
+section { padding: 100px 24px; }
+
+.section-inner { max-width: 960px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.92rem; letter-spacing: 0.3em;
+  color: var(--ocean-light); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 200; letter-spacing: 0.06em;
+  line-height: 1.4; margin-bottom: 20px;
+}
+.section-divider {
+  width: 48px; height: 1px;
+  background: linear-gradient(to right, var(--aqua), transparent);
+  margin-bottom: 40px;
+}
+
+/* ─── ABOUT ─── */
+#about { background: #f0fafc; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 72px; align-items: center;
+}
+.about-portrait {
+  position: relative;
+}
+.portrait-frame {
+  width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--ocean-mid) 0%, var(--aqua) 100%);
+  border-radius: 4px 40px 4px 40px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+}
+.portrait-placeholder {
+  font-size: 5rem; opacity: 0.3;
+}
+.portrait-accent {
+  position: absolute; bottom: -16px; right: -16px;
+  width: 80px; height: 80px;
+  border: 1px solid var(--dawn-gold); border-radius: 50%;
+  opacity: 0.6;
+}
+.about-text p {
+  font-size: 1rem; line-height: 2.1; color: var(--text-mid);
+  margin-bottom: 20px;
+}
+.about-certs {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;
+}
+.cert-badge {
+  padding: 5px 14px; font-size: 0.68rem; letter-spacing: 0.1em;
+  border: 1px solid rgba(26,155,191,0.3); border-radius: 30px;
+  color: var(--ocean-mid); background: white;
+}
+
+/* ─── SESSION ─── */
+#session {
+  background: linear-gradient(165deg, var(--ocean-deep) 0%, #0a4a72 60%, #083850 100%);
+  color: var(--foam); position: relative; overflow: hidden;
+}
+#session::before {
+  content: '龍';
+  position: absolute; right: -2%; top: 50%; transform: translateY(-50%);
+  font-size: 30vw; font-weight: 200;
+  color: rgba(62,207,190,0.04); line-height: 1;
+  pointer-events: none;
+}
+#session .section-title { color: var(--foam); }
+#session .section-label { color: var(--aqua); }
+#session .section-divider { background: linear-gradient(to right, var(--dawn-gold), transparent); }
+
+.session-intro {
+  font-size: 1rem; line-height: 2.2; color: rgba(214,240,240,0.88);
+  max-width: 640px; margin-bottom: 56px;
+}
+.session-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
+}
+.session-card {
+  padding: 36px 28px;
+  border: 1px solid rgba(62,207,190,0.2);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.session-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(62,207,190,0.5);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+}
+.card-icon { font-size: 2rem; margin-bottom: 16px; }
+.card-title { font-size: 1rem; letter-spacing: 0.1em; margin-bottom: 10px; color: var(--aqua); }
+.card-desc { font-size: 0.95rem; line-height: 2; color: rgba(214,240,240,0.78); }
+.card-price {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid rgba(62,207,190,0.15);
+  font-size: 0.75rem; color: var(--dawn-gold); letter-spacing: 0.1em;
+}
+
+/* ─── AROMA ─── */
+#aroma { background: #fafcfa; }
+.aroma-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;
+}
+.aroma-card {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(26,155,191,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.aroma-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,74,114,0.1); }
+.aroma-header {
+  padding: 32px 28px 24px;
+  background: linear-gradient(135deg, #e8f8fc, #d0f0f0);
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.aroma-icon { font-size: 2.2rem; }
+.aroma-name { font-size: 1rem; letter-spacing: 0.08em; margin-bottom: 4px; color: var(--ocean-deep); }
+.aroma-en { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; color: var(--text-light); letter-spacing: 0.12em; }
+.aroma-body { padding: 24px 28px; background: white; }
+.aroma-body p { font-size: 1rem; line-height: 2; color: var(--text-mid); margin-bottom: 16px; }
+.aroma-price { font-size: 0.88rem; color: var(--ocean-light); letter-spacing: 0.08em; }
+
+/* ─── APP ─── */
+#app {
+  background: linear-gradient(135deg, #062a44 0%, #0a5472 50%, #0d8a8a 100%);
+  color: var(--foam);
+}
+#app .section-title { color: var(--foam); }
+#app .section-label { color: var(--aqua); }
+.app-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+.app-mockup {
+  position: relative; display: flex; justify-content: center;
+}
+.phone-frame {
+  width: 220px; height: 420px;
+  border: 2px solid rgba(62,207,190,0.3);
+  border-radius: 36px;
+  background: linear-gradient(170deg, #0d1535, #142248);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  position: relative; overflow: hidden;
+}
+.phone-frame::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(62,207,190,0.12), transparent 60%);
+}
+.phone-star { font-size: 3rem; }
+.phone-title { font-size: 0.8rem; letter-spacing: 0.15em; color: var(--aqua); }
+.phone-sub { font-size: 0.65rem; color: rgba(214,240,240,0.5); letter-spacing: 0.1em; }
+.app-glow {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(62,207,190,0.12), transparent 70%);
+  pointer-events: none;
+}
+.app-text p { font-size: 1rem; line-height: 2.1; color: rgba(214,240,240,0.85); margin-bottom: 20px; }
+.app-features { list-style: none; margin: 24px 0 36px; display: flex; flex-direction: column; gap: 10px; }
+.app-features li {
+  font-size: 0.92rem; letter-spacing: 0.08em;
+  color: rgba(214,240,240,0.7); padding-left: 20px; position: relative;
+}
+.app-features li::before { content: '◈'; position: absolute; left: 0; color: var(--aqua); font-size: 0.7rem; }
+
+/* ─── CONTACT ─── */
+#contact { background: #f5fbfc; }
+.contact-wrap { max-width: 600px; margin: 0 auto; text-align: center; }
+.contact-intro { font-size: 1rem; line-height: 2.1; color: var(--text-mid); margin-bottom: 48px; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.72rem; letter-spacing: 0.15em; color: var(--ocean-mid); }
+.form-input, .form-textarea, .form-select {
+  padding: 13px 16px; font-family: 'Noto Serif JP', serif; font-size: 0.95rem;
+  border: 1px solid rgba(26,155,191,0.25); border-radius: 8px;
+  background: white; color: var(--text-dark); outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--aqua); box-shadow: 0 0 0 3px rgba(62,207,190,0.12);
+}
+.form-textarea { min-height: 140px; resize: vertical; }
+.form-note { font-size: 0.72rem; color: var(--text-light); line-height: 1.8; }
+.form-submit {
+  padding: 16px 48px; font-family: 'Noto Serif JP', serif;
+  font-size: 0.82rem; letter-spacing: 0.2em;
+  background: linear-gradient(135deg, var(--ocean-mid), var(--aqua));
+  color: white; border: none; border-radius: 50px;
+  cursor: pointer; align-self: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(26,155,191,0.35);
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,155,191,0.5); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ocean-deep); color: rgba(214,240,240,0.6);
+  padding: 52px 24px;
+  text-align: center; font-size: 0.92rem; letter-spacing: 0.12em;
+  line-height: 2.3;
+}
+footer .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; color: var(--foam); letter-spacing: 0.2em;
+  margin-bottom: 22px; display: block;
+}
+
+/* ─── REVEAL ANIMATION ─── */
+.reveal {
+  opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .portrait-frame { aspect-ratio: 4/3; border-radius: 4px 28px 4px 28px; }
+
+  .app-inner { grid-template-columns: 1fr; gap: 40px; }
+  .phone-frame { width: 180px; height: 340px; }
+  .app-mockup { order: -1; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero"><span>Bay</span>leaf <small style="font-size:0.65em;letter-spacing:0.15em;color:rgba(214,240,240,0.5);margin-left:6px">ベイリーフ</small></a>
+  <ul class="nav-links">
+    <li><a href="#about">プロフィール</a></li>
+    <li><a href="#session">龍頭図セッション</a></li>
+    <li><a href="#aroma">アロマセラピー</a></li>
+    <li><a href="#app">アプリ</a></li>
+    <li><a href="#calendar">空き状況</a></li>
+    <li><a href="#contact">ご予約・お問い合わせ</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">プロフィール</a>
+  <a href="#session" onclick="toggleMenu()">龍頭図セッション</a>
+  <a href="#aroma" onclick="toggleMenu()">アロマセラピー</a>
+  <a href="#app" onclick="toggleMenu()">アプリ</a>
+  <a href="#calendar" onclick="toggleMenu()">空き状況</a>
+  <a href="#contact" onclick="toggleMenu()">ご予約・お問い合わせ</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="light-rays"></div>
+
+  <!-- particles -->
+  <div id="particles"></div>
+
+  <div class="wave-container">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-en">Star Reading &amp; Aromatherapy</p>
+    <h1 class="hero-title">
+      あなたの魂が<br>
+      <em>選んできた道</em>を<br>
+      星と香りで照らす
+    </h1>
+    <p class="hero-sub">
+      龍頭図（魂の設計図）による星詠み<br>
+      ホスピタリティ &ensp;｜&ensp; 技術 &ensp;｜&ensp; 有機化合物
+    </p>
+    <div class="hero-cta">
+      <a href="#session" class="btn-primary">セッションを見る</a>
+      <a href="#contact" class="btn-outline">お問い合わせ</a>
+    </div>
+    <div class="hero-sns">
+      <a href="https://www.instagram.com/miki13tenti" class="sns-link" aria-label="Instagram（星詠み）" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.instagram.com/miki_insuta/" class="sns-link" aria-label="Instagram（アロマ）" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/aroma.miki" class="sns-link" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@mikitopia" class="sns-link" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner about-grid">
+    <div class="about-portrait reveal">
+      <div class="portrait-frame">
+        <div class="portrait-placeholder">✦</div>
+      </div>
+      <div class="portrait-accent"></div>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-label">Profile</p>
+      <h2 class="section-title">みき<br><small style="font-size:0.6em;letter-spacing:0.08em;color:var(--text-light)">星詠み師・アロマセラピスト</small></h2>
+      <div class="section-divider"></div>
+      <p>大阪・北摂を拠点に、星詠みとアロマセラピーを統合したセッションを提供しています。</p>
+      <p>龍頭図（魂の設計図）を中心とした独自の星詠みは、西洋占星術・ジョーティッシュ・カバラ・密教の視点を重ね合わせた5年以上にわたる探究から生まれました。魂の「設計図」を読み解くことで、あなたが本来持っているエネルギーの循環を取り戻すお手伝いをします。</p>
+      <p>アロマセラピーでは産婦人科・美容外科での臨床経験を活かし、身体と感情の両面から香りをご提案します。</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- SESSION -->
+<section id="session">
+  <div class="section-inner">
+    <p class="section-label reveal">Dragon Head Reading</p>
+    <h2 class="section-title reveal">龍頭図セッション</h2>
+    <div class="section-divider reveal"></div>
+    <p class="session-intro reveal">
+      ドラゴンヘッド（ノースノード）は、魂が「今生で向かう方向」を示す羅針盤です。
+      あなたの龍頭図を読み解くことで、過去生からの記憶（ドラゴンテール）と、今生で開花させるべき資質（ドラゴンヘッド）の両方を丁寧に紐解きます。運命は固定されていません。星は、可能性の地図です。
+    </p>
+    <div class="session-cards">
+      <div class="session-card reveal">
+        <div class="card-icon">🌑</div>
+        <p class="card-title">ファースト龍頭図セッション</p>
+        <p class="card-desc">初めての方向け。出生データをもとに龍頭図を作成し、魂の方向性と現在のテーマをお伝えします。録音・PDFレポート付き。</p>
+        <p class="card-price">60分 / ¥15,000（税込）</p>
+      </div>
+      <div class="session-card reveal">
+        <div class="card-icon">🌓</div>
+        <p class="card-title">深読みセッション</p>
+        <p class="card-desc">特定のテーマ（仕事・人間関係・健康など）に絞って深く読みます。現在のトランジットとの関係も丁寧に紐解きます。</p>
+        <p class="card-price">90分 / ¥22,000（税込）</p>
+      </div>
+      <div class="session-card reveal">
+        <div class="card-icon">🌕</div>
+        <p class="card-title">星×香りの統合セッション</p>
+        <p class="card-desc">星詠みとアロマセラピーを組み合わせたオリジナルセッション。龍頭図の読み解きに加え、あなたの魂のテーマに合った精油をブレンドしてお届けします。</p>
+        <p class="card-price">120分 / ¥28,000（税込）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AROMA -->
+<section id="aroma">
+  <div class="section-inner">
+    <p class="section-label reveal">Aromatherapy</p>
+    <h2 class="section-title reveal">アロマセラピーメニュー</h2>
+    <div class="section-divider reveal"></div>
+    <div class="aroma-grid">
+      <div class="aroma-card reveal">
+        <div class="aroma-header">
+          <div class="aroma-icon">🌿</div>
+          <div>
+            <p class="aroma-name">トリートメント</p>
+            <p class="aroma-en">Aromatherapy Treatment</p>
+          </div>
+        </div>
+        <div class="aroma-body">
+          <p>ご体調やご希望をうかがい、精油をブレンドしてトリートメントを行います。心身のバランスを整え、自然治癒力を高めます。</p>
+          <p class="aroma-price">60分 ¥9,000 / 90分 ¥12,000（税込）</p>
+        </div>
+      </div>
+      <div class="aroma-card reveal">
+        <div class="aroma-header">
+          <div class="aroma-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 56" width="38" height="44" xmlns="http://www.w3.org/2000/svg">
+              <!-- cap -->
+              <rect x="17" y="4" width="14" height="7" rx="1.2" fill="#2a3a5e"/>
+              <rect x="16" y="10" width="16" height="4" rx="0.8" fill="#1f2a48"/>
+              <!-- neck -->
+              <rect x="19" y="13" width="10" height="4" fill="#1a3a66"/>
+              <!-- bottle body (cobalt) -->
+              <path d="M14 20 Q14 17 19 17 L29 17 Q34 17 34 20 L34 48 Q34 52 30 52 L18 52 Q14 52 14 48 Z" fill="#1e4a8c"/>
+              <!-- highlight -->
+              <path d="M17 22 Q16.5 24 16.5 28 L16.5 44" stroke="#6b9bd6" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.75"/>
+              <!-- subtle label band -->
+              <rect x="16" y="34" width="16" height="8" fill="#173a70" opacity="0.6"/>
+            </svg>
+          </div>
+          <div>
+            <p class="aroma-name">ブレンディング</p>
+            <p class="aroma-en">Custom Blend</p>
+          </div>
+        </div>
+        <div class="aroma-body">
+          <p>症状・目的・体質に合わせてオリジナルブレンドオイルをご提案します。日常のセルフケアにお役立てください。</p>
+          <p class="aroma-price">カウンセリング込み ¥6,000〜（税込）</p>
+        </div>
+      </div>
+      <div class="aroma-card reveal">
+        <div class="aroma-header">
+          <div class="aroma-icon">✨</div>
+          <div>
+            <p class="aroma-name">ベビーマッサージ・産後ケア</p>
+            <p class="aroma-en">Baby Massage & Postnatal</p>
+          </div>
+        </div>
+        <div class="aroma-body">
+          <p>産婦人科での臨床経験をもとに、赤ちゃんへの安全なマッサージと産後ママのアロマケアを提供します。ご要望に応じてご自宅訪問も対応可能です。</p>
+          <p class="aroma-price">60分 ¥10,000（税込）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="app">
+  <div class="section-inner app-inner">
+    <div class="app-text">
+      <p class="section-label reveal">Free App</p>
+      <h2 class="section-title reveal">星と香り<br>Aroma Star</h2>
+      <div class="section-divider reveal"></div>
+      <div class="app-text reveal">
+        <p>星座・ハウスのエネルギーと精油を組み合わせた、無料の参照ツールアプリです。日々のセルフケアにご活用ください。</p>
+        <ul class="app-features">
+          <li>12星座 × アロマの対応表</li>
+          <li>ハウス別・精油提案</li>
+          <li>薬機法準拠の安全な表現</li>
+          <li>ホーム画面に追加してすぐ使える（PWA）</li>
+        </ul>
+        <a href="#" class="btn-primary">アプリを開く</a>
+      </div>
+    </div>
+    <div class="app-mockup reveal">
+      <div class="app-glow"></div>
+      <div class="phone-frame">
+        <div class="phone-star">⭐</div>
+        <p class="phone-title">星と香り</p>
+        <p class="phone-sub">Aroma Star</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar" style="background:#f5fbfc; padding:100px 24px;">
+  <div class="section-inner">
+    <p class="section-label reveal" style="text-align:center">Schedule</p>
+    <h2 class="section-title reveal" style="text-align:center">空き状況</h2>
+    <div class="section-divider reveal" style="margin:0 auto 16px"></div>
+    <p class="reveal" style="text-align:center;font-size:0.95rem;color:var(--text-mid);margin-bottom:20px;line-height:2;">
+      ご希望の日時をご確認のうえ、下のお問い合わせフォームまたはメールにてご連絡ください。
+    </p>
+    <p class="reveal" style="text-align:center;font-size:0.95rem;color:var(--ocean-mid);margin-bottom:36px;line-height:1.9;">
+      <strong style="font-weight:500;">【予約可能日の見方】</strong><br>
+      カレンダーの日付に「ー可ー」と表示されている日が、ご予約可能日です。
+    </p>
+    <div class="reveal" style="width:100%;overflow-x:auto;border-radius:12px;box-shadow:0 4px 24px rgba(10,74,114,0.08);">
+      <iframe src="https://calendar.google.com/calendar/embed?src=shizennothikara19%40gmail.com&ctz=Asia%2FTokyo&hl=ja&mode=MONTH" style="border:0;border-radius:12px;display:block;min-width:320px;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <p class="section-label" style="text-align:center">Contact & Booking</p>
+    <h2 class="section-title reveal" style="text-align:center">ご予約・<br>お問い合わせ</h2>
+    <div class="section-divider reveal" style="margin:0 auto 40px"></div>
+    <p class="contact-intro reveal">
+      ご質問やセッションのご相談はお気軽にどうぞ。<br>
+      2〜3営業日以内にご返信いたします。<br><br>
+      メールでのお問い合わせは下記アドレスまで：<br>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.05em;letter-spacing:0.08em;color:var(--ocean-mid);">shizennothikara19♪gmail.com</span><br>
+      <small style="font-size:0.72rem;color:var(--text-light);">※ ♪を @ に変えてお送りください</small>
+    </p>
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">お名前</label>
+        <input class="form-input" type="text" placeholder="山田 花子" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">メールアドレス</label>
+        <input class="form-input" type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">ご希望のメニュー</label>
+        <select class="form-select">
+          <option value="">お選びください</option>
+          <option>ファースト龍頭図セッション</option>
+          <option>深読みセッション</option>
+          <option>星×香りの統合セッション</option>
+          <option>アロマトリートメント</option>
+          <option>ブレンディング</option>
+          <option>ベビーマッサージ・産後ケア</option>
+          <option>その他・ご質問</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">メッセージ</label>
+        <textarea class="form-textarea" placeholder="ご相談内容・ご質問など、お気軽にどうぞ。"></textarea>
+      </div>
+      <p class="form-note">
+        ※ いただいた個人情報はご連絡の目的のみに使用します。<br>
+        ※ セッションはオンライン（Zoom）および対面（大阪・北摂）にて承ります。
+      </p>
+      <button type="submit" class="form-submit">送信する</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Bayleaf <small style="font-size:0.6em;letter-spacing:0.15em;color:rgba(214,240,240,0.4)">ベイリーフ</small></span>
+  <p>星詠み師・アロマセラピスト　みき</p>
+  <p>大阪・北摂</p>
+  <br>
+  <p>© 2026 All Rights Reserved.</p>
+</footer>
+
+<script>
+// パーティクル生成
+(function(){
+  const container = document.getElementById('particles');
+  for(let i = 0; i < 18; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      bottom:${Math.random()*30}%;
+      animation-duration:${Math.random()*12+8}s;
+      animation-delay:${Math.random()*10}s;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ハンバーガーメニュー
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// スクロールアニメーション
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// フォーム送信
+function handleSubmit(e){
+  e.preventDefault();
+  alert('お問い合わせありがとうございます。\n2〜3営業日以内にご返信いたします。');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
