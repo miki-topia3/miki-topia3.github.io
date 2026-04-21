@@ -18,6 +18,7 @@
   --dawn-gold:    #f5c842;
   --dawn-warm:    #f0a840;
   --indigo:       #6b9bd6;
+  --aizen:        #4a5c9c;
   --white:        #f9fdfe;
   --text-dark:    #062030;
   --text-mid:     #2a5068;
@@ -146,8 +147,12 @@ nav {
   animation: fadeUp 1.2s 0.35s ease-out both;
 }
 .hero-title em {
-  font-style: italic; color: var(--indigo);
-  font-family: 'Cormorant Garamond', serif; font-size: 1.1em;
+  font-style: normal; color: var(--foam);
+  font-family: 'Noto Serif JP', serif; font-size: 1em;
+  font-weight: 300;
+}
+.hero-title .accent-aizen {
+  color: var(--aizen); font-weight: 400;
 }
 .hero-sub {
   font-size: clamp(1rem, 2.2vw, 1.15rem);
@@ -311,7 +316,11 @@ section { padding: 100px 24px; }
 /* ─── AROMA ─── */
 #aroma { background: #fafcfa; }
 .aroma-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+  max-width: 880px; margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .aroma-grid { grid-template-columns: 1fr; }
 }
 .aroma-card {
   border-radius: 20px; overflow: hidden;
@@ -330,6 +339,46 @@ section { padding: 100px 24px; }
 .aroma-body { padding: 24px 28px; background: white; }
 .aroma-body p { font-size: 1rem; line-height: 2; color: var(--text-mid); margin-bottom: 16px; }
 .aroma-price { font-size: 0.88rem; color: var(--ocean-light); letter-spacing: 0.08em; }
+
+/* expandable details */
+.aroma-details { margin-top: 12px; }
+.aroma-details summary {
+  cursor: pointer; list-style: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.9rem; color: var(--ocean-mid);
+  padding: 8px 14px; border: 1px solid rgba(26,155,191,0.25);
+  border-radius: 20px; transition: all 0.3s;
+  letter-spacing: 0.05em;
+}
+.aroma-details summary::-webkit-details-marker { display: none; }
+.aroma-details summary::before {
+  content: '＋'; font-size: 0.9em; color: var(--ocean-light);
+}
+.aroma-details[open] summary::before { content: '−'; }
+.aroma-details summary:hover { background: rgba(26,155,191,0.06); border-color: var(--ocean-light); }
+.aroma-details-content {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(26,155,191,0.12);
+}
+.aroma-details-content p {
+  font-size: 0.95rem; line-height: 2; color: var(--text-mid); margin-bottom: 14px;
+}
+.aroma-details-content p:last-child { margin-bottom: 0; }
+
+/* notice box */
+.aroma-notice {
+  margin-top: 56px; padding: 32px 32px;
+  background: #f5fbfc; border-left: 3px solid var(--ocean-light);
+  border-radius: 8px;
+}
+.aroma-notice h3 {
+  font-size: 1.05rem; font-weight: 400; letter-spacing: 0.08em;
+  color: var(--ocean-deep); margin-bottom: 16px;
+}
+.aroma-notice p {
+  font-size: 0.95rem; line-height: 2; color: var(--text-mid); margin-bottom: 12px;
+}
+.aroma-notice p:last-child { margin-bottom: 0; }
 
 /* ─── APP ─── */
 #app {
@@ -483,7 +532,7 @@ footer .footer-logo {
     <h1 class="hero-title">
       あなたの魂が<br>
       <em>選んできた道</em>を<br>
-      星と香りで照らす
+      星と香りで<span class="accent-aizen">統合する</span>
     </h1>
     <p class="hero-sub">
       龍頭図（魂の設計図）による星詠み<br>
@@ -578,15 +627,64 @@ footer .footer-logo {
     <div class="aroma-grid">
       <div class="aroma-card reveal">
         <div class="aroma-header">
-          <div class="aroma-icon">🌿</div>
+          <div class="aroma-icon">🌹</div>
           <div>
-            <p class="aroma-name">トリートメント</p>
-            <p class="aroma-en">Aromatherapy Treatment</p>
+            <p class="aroma-name">Jコース</p>
+            <p class="aroma-en">Rose Body Oil by Jurlique</p>
           </div>
         </div>
         <div class="aroma-body">
-          <p>ご体調やご希望をうかがい、精油をブレンドしてトリートメントを行います。心身のバランスを整え、自然治癒力を高めます。</p>
-          <p class="aroma-price">60分 ¥9,000 / 90分 ¥12,000（税込）</p>
+          <p>ジュリークのローズボディオイルを使った、甘く優美な香りに包まれるトリートメント。自社農園で育てられたアンティークローズ（ローズガリカ）のエキスを贅沢に配合した、高い保湿力が特徴の特別な一本です。</p>
+          <p>施術時間には約10分間の手浴と、その日の体調をうかがうコンサルテーションを含みます。</p>
+          <p class="aroma-price">
+            2カ所 60分 ¥15,000 ／ 3カ所 90分 ¥20,000 ／ 全身 120分 ¥28,000（税込）<br>
+            <small style="font-size:0.85em;color:var(--text-light);">※背中／デコルテ／ハンド／フット／お腹よりお選びいただけます</small>
+          </p>
+          <details class="aroma-details">
+            <summary>ジュリークについて</summary>
+            <div class="aroma-details-content">
+              <p>ドイツ出身の化学者・薬草学者ユルゲン・クライン博士と、園芸家・植物学者のウルリケ・クライン夫人。お二人のお名前を組み合わせて生まれたブランド「Jurlique（ジュリーク）」。創業の地はオーストラリア・アデレードヒルズの自社農園で、バイオダイナミック農法によって植物が育てられています。</p>
+              <p>現在は経営がポーラオルビスグループに移っていますが、2025年の創業40周年に際してウルリケ夫人ご自身がブランドの原点と哲学を語るメッセージを寄せられるなど、今もなお精神的支柱としてブランドを見守っていらっしゃいます。</p>
+              <p>私がジュリークサロンの店長を務めていた頃、ジュリークのサロンは日本全国に数多く展開されていました。今ではサロン向けの卸販売はほとんど行われておらず、私は直営ブティックで購入したジュリーク製品を、このトリートメントのためだけに使用しています。店頭でボトルを販売することはいたしません。あの頃から変わらずに信頼してきたこのオイルを、お客様に直接お届けしたい——その想いから続けている形です。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="aroma-card reveal">
+        <div class="aroma-header">
+          <div class="aroma-icon">🥜</div>
+          <div>
+            <p class="aroma-name">Pコース</p>
+            <p class="aroma-en">Peanut Oil Massage &mdash; Edgar Cayce Method</p>
+          </div>
+        </div>
+        <div class="aroma-body">
+          <p>20世紀アメリカの神秘家エドガー・ケイシーがリーディングの中で伝えた、ピーナッツオイルによる伝統的なボディワーク。脊柱周辺やお腹を中心に、ゆったりとした手技で巡りを整えます。</p>
+          <p>使用するのは、精油をブレンドしたオリジナルのピーナッツオイル。体の芯にまで届くような、深い休息の時間を。</p>
+          <p>施術時間には約20分間の足浴と、その日の体調をうかがうコンサルテーションを含みます。</p>
+          <p class="aroma-price">
+            脊柱周辺・お腹 60分 ¥12,000 ／ 全身 90分 ¥18,000（税込）
+          </p>
+          <details class="aroma-details">
+            <summary>エドガー・ケイシー療法について</summary>
+            <div class="aroma-details-content">
+              <p>エドガー・ケイシー（1877-1945）はアメリカの神秘家で、睡眠状態で行う「リーディング」を通じて数多くの身体療法を伝えたことで知られています。ピーナッツオイルのマッサージもその一つで、関節や循環器、消化器への働きかけが語られました。</p>
+              <p>当サロンでは、ケイシーの示唆したオイル療法の考え方をもとに、精油をブレンドしたオリジナルのピーナッツオイルを使用。脊柱周辺とお腹を中心とした、ゆったりとしたリズムの手技でお届けします。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="aroma-card reveal">
+        <div class="aroma-header">
+          <div class="aroma-icon">✨</div>
+          <div>
+            <p class="aroma-name">ベビーマッサージ・産後ケア</p>
+            <p class="aroma-en">Baby Massage & Postnatal</p>
+          </div>
+        </div>
+        <div class="aroma-body">
+          <p>産婦人科での臨床経験をもとに、赤ちゃんへの安全なマッサージと産後ママのアロマケアを提供します。ご要望に応じてご自宅訪問も対応可能です。</p>
+          <p class="aroma-price">60分 ¥10,000（税込）</p>
         </div>
       </div>
       <div class="aroma-card reveal">
@@ -616,19 +714,14 @@ footer .footer-logo {
           <p class="aroma-price">カウンセリング込み ¥6,000〜（税込）</p>
         </div>
       </div>
-      <div class="aroma-card reveal">
-        <div class="aroma-header">
-          <div class="aroma-icon">✨</div>
-          <div>
-            <p class="aroma-name">ベビーマッサージ・産後ケア</p>
-            <p class="aroma-en">Baby Massage & Postnatal</p>
-          </div>
-        </div>
-        <div class="aroma-body">
-          <p>産婦人科での臨床経験をもとに、赤ちゃんへの安全なマッサージと産後ママのアロマケアを提供します。ご要望に応じてご自宅訪問も対応可能です。</p>
-          <p class="aroma-price">60分 ¥10,000（税込）</p>
-        </div>
-      </div>
+    </div>
+
+    <div class="aroma-notice reveal">
+      <h3>ご利用にあたって</h3>
+      <p>当サロンの施術は、心身の調和と休息を目的としたリラクセーションです。医療行為ではなく、病気の診断・治療・予防や、医薬品の代替となるものではありません。</p>
+      <p>植物オイル・精油を使用するため、アレルギー体質の方（特にPコースは落花生アレルギーのある方）は、事前にご相談ください。</p>
+      <p>妊娠中の方、通院中の方、持病のある方は、かかりつけ医の承諾を得てからのご利用をお願いしております。</p>
+      <p>ご不安なことがあれば、一人で悩まずにまずはご相談ください。ご体調やご希望をうかがいながら、お一人おひとりに合った形をご一緒に考えます。</p>
     </div>
   </div>
 </section>
@@ -648,7 +741,11 @@ footer .footer-logo {
           <li>薬機法準拠の安全な表現</li>
           <li>ホーム画面に追加してすぐ使える（PWA）</li>
         </ul>
-        <a href="#" class="btn-primary">アプリを開く</a>
+        <a href="#" class="btn-primary" style="opacity:0.6;cursor:default;pointer-events:none;" aria-disabled="true">Coming Soon</a>
+        <p style="margin-top:18px;font-size:0.9rem;color:rgba(214,240,240,0.7);letter-spacing:0.08em;line-height:1.9;">
+          ※ アプリは現在準備中です。<br>
+          公開まで今しばらくお待ちください。
+        </p>
       </div>
     </div>
     <div class="app-mockup reveal">
@@ -710,7 +807,8 @@ footer .footer-logo {
           <option>ファースト龍頭図セッション</option>
           <option>深読みセッション</option>
           <option>星×香りの統合セッション</option>
-          <option>アロマトリートメント</option>
+          <option>Jコース（ジュリーク ローズボディオイル）</option>
+          <option>Pコース（ピーナッツオイル・ケイシー療法）</option>
           <option>ブレンディング</option>
           <option>ベビーマッサージ・産後ケア</option>
           <option>その他・ご質問</option>
