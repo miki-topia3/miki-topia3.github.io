@@ -510,7 +510,57 @@ section { padding: 100px 24px; }
 /* ─── CONTACT ─── */
 #contact { background: #f5fbfc; }
 .contact-wrap { max-width: 600px; margin: 0 auto; text-align: center; }
-.contact-intro { font-size: 1rem; line-height: 2.1; color: var(--text-mid); margin-bottom: 48px; }
+.contact-intro { font-size: 1rem; line-height: 2.1; color: var(--text-mid); margin-bottom: 36px; }
+.contact-mail {
+  margin: 0 auto 40px;
+  padding: 32px 24px;
+  background: #f5fbfc;
+  border: 1px solid rgba(26,155,191,0.18);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 480px;
+}
+.contact-mail-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; letter-spacing: 0.3em;
+  color: var(--ocean-light); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.contact-mail-address {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; letter-spacing: 0.06em;
+  color: var(--ocean-deep); font-weight: 400;
+  margin-bottom: 10px; word-break: keep-all;
+}
+.contact-mail-note {
+  font-size: 0.85rem; color: var(--text-light); letter-spacing: 0.05em;
+}
+.contact-guide {
+  font-size: 1rem; line-height: 2; color: var(--text-mid);
+  margin-bottom: 16px; text-align: left;
+}
+.contact-checklist {
+  list-style: none; padding: 0;
+  margin: 0 auto 36px;
+  max-width: 480px; text-align: left;
+}
+.contact-checklist li {
+  position: relative;
+  padding: 8px 0 8px 22px;
+  font-size: 0.95rem; line-height: 1.9;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(26,155,191,0.12);
+}
+.contact-checklist li:last-child { border-bottom: none; }
+.contact-checklist li::before {
+  content: '・'; position: absolute; left: 4px; top: 8px;
+  color: var(--ocean-light); font-weight: 600;
+}
+.contact-footnote {
+  font-size: 0.85rem; line-height: 2;
+  color: var(--text-light); letter-spacing: 0.05em;
+  text-align: center; margin-top: 16px;
+}
 .contact-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-label { font-size: 0.72rem; letter-spacing: 0.15em; color: var(--ocean-mid); }
@@ -982,45 +1032,27 @@ footer .footer-logo {
     <h2 class="section-title reveal" style="text-align:center">ご予約・<br>お問い合わせ</h2>
     <div class="section-divider reveal" style="margin:0 auto 40px"></div>
     <p class="contact-intro reveal">
-      ご質問やセッションのご相談はお気軽にどうぞ。<br>
-      2〜3営業日以内にご返信いたします。<br><br>
-      メールでのお問い合わせは下記アドレスまで：<br>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:1.05em;letter-spacing:0.08em;color:var(--ocean-mid);">shizennothikara19♪gmail.com</span><br>
-      <small style="font-size:0.72rem;color:var(--text-light);">※ ♪を @ に変えてお送りください</small>
+      ご質問やセッションのご相談は、メールにてお気軽にどうぞ。<br>
+      2〜3営業日以内にご返信いたします。
     </p>
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
-      <div class="form-group">
-        <label class="form-label">お名前</label>
-        <input class="form-input" type="text" placeholder="山田 花子" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">メールアドレス</label>
-        <input class="form-input" type="email" placeholder="your@email.com" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">ご希望のメニュー</label>
-        <select class="form-select">
-          <option value="">お選びください</option>
-          <option>ファースト龍頭図セッション</option>
-          <option>深読みセッション</option>
-          <option>星×香りの統合セッション</option>
-          <option>Jコース（ジュリーク ローズボディオイル）</option>
-          <option>Pコース（ピーナッツオイル・ケイシー療法）</option>
-          <option>ブレンディング</option>
-          <option>ベビーマッサージ・産後ケア</option>
-          <option>その他・ご質問</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">メッセージ</label>
-        <textarea class="form-textarea" placeholder="ご相談内容・ご質問など、お気軽にどうぞ。"></textarea>
-      </div>
-      <p class="form-note">
-        ※ いただいた個人情報はご連絡の目的のみに使用します。<br>
-        ※ セッションはオンライン（Zoom）および対面（大阪・北摂）にて承ります。
-      </p>
-      <button type="submit" class="form-submit">送信する</button>
-    </form>
+    <div class="contact-mail reveal">
+      <p class="contact-mail-label">Mail</p>
+      <p class="contact-mail-address">shizennothikara19♪gmail.com</p>
+      <p class="contact-mail-note">※ ♪を @ に変えてお送りください</p>
+    </div>
+    <p class="contact-guide reveal">
+      お問い合わせの際は、以下をお知らせいただけますとスムーズにご案内できます。
+    </p>
+    <ul class="contact-checklist reveal">
+      <li>お名前</li>
+      <li>ご希望のメニュー</li>
+      <li>ご希望の日時（カレンダーの「ー可ー」の日よりお選びください）</li>
+      <li>ご相談内容・ご質問など</li>
+    </ul>
+    <p class="contact-footnote reveal">
+      ※ いただいた個人情報は、ご連絡の目的のみに使用いたします。<br>
+      ※ セッションはオンライン（Zoom）および対面（大阪・北摂）にて承ります。
+    </p>
   </div>
 </section>
 
@@ -1062,13 +1094,6 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// フォーム送信
-function handleSubmit(e){
-  e.preventDefault();
-  alert('お問い合わせありがとうございます。\n2〜3営業日以内にご返信いたします。');
-  e.target.reset();
-}
 </script>
 </body>
 </html>
