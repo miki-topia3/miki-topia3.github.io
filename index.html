@@ -139,6 +139,21 @@ nav {
   margin-bottom: 20px; font-weight: 300;
   animation: fadeUp 1.2s 0.2s ease-out both;
 }
+.seasonal-marker {
+  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  font-size: clamp(0.72rem, 1.4vw, 0.82rem);
+  letter-spacing: 0.32em;
+  color: rgba(245, 200, 66, 0.78);
+  font-weight: 300; font-style: italic;
+  margin-bottom: 14px;
+  animation: fadeUp 1.2s 0.1s ease-out both;
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.seasonal-marker::before, .seasonal-marker::after {
+  content: ''; display: inline-block;
+  width: 28px; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(245,200,66,0.5), transparent);
+}
 .hero-title {
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 200; line-height: 1.35;
@@ -662,6 +677,7 @@ footer .footer-logo {
   </div>
 
   <div class="hero-content">
+    <p class="seasonal-marker">立夏 &mdash; Beginning of Summer</p>
     <p class="hero-en">Star Reading &amp; Aromatherapy</p>
     <h1 class="hero-title">
       あなたの魂が<br>
