@@ -139,21 +139,6 @@ nav {
   margin-bottom: 20px; font-weight: 300;
   animation: fadeUp 1.2s 0.2s ease-out both;
 }
-.seasonal-marker {
-  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
-  font-size: clamp(0.72rem, 1.4vw, 0.82rem);
-  letter-spacing: 0.32em;
-  color: rgba(245, 200, 66, 0.78);
-  font-weight: 300; font-style: italic;
-  margin-bottom: 14px;
-  animation: fadeUp 1.2s 0.1s ease-out both;
-  display: inline-flex; align-items: center; gap: 14px;
-}
-.seasonal-marker::before, .seasonal-marker::after {
-  content: ''; display: inline-block;
-  width: 28px; height: 1px;
-  background: linear-gradient(to right, transparent, rgba(245,200,66,0.5), transparent);
-}
 .hero-title {
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 200; line-height: 1.35;
@@ -302,6 +287,37 @@ section { padding: 100px 24px; }
 .session-intro {
   font-size: 1rem; line-height: 2.2; color: rgba(214,240,240,0.88);
   max-width: 640px; margin-bottom: 56px;
+}
+.session-question {
+  max-width: 680px; margin: 0 auto 64px;
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid rgba(62,207,190,0.18);
+  border-bottom: 1px solid rgba(62,207,190,0.18);
+  text-align: center;
+}
+.session-question p {
+  font-size: 1.05rem; line-height: 2.2;
+  color: rgba(214,240,240,0.92);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.session-question p:last-child { margin-bottom: 0; }
+.session-question-finale {
+  margin-top: 28px !important;
+  padding-top: 24px;
+  border-top: 1px solid rgba(245,200,66,0.25);
+  font-size: 1.3rem !important;
+  line-height: 1.9 !important;
+  color: var(--dawn-gold) !important;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 600px) {
+  .session-question { padding: 32px 22px; }
+  .session-question p { font-size: 1rem; }
+  .session-question-finale { font-size: 1.15rem !important; }
 }
 .session-cards {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
@@ -677,7 +693,6 @@ footer .footer-logo {
   </div>
 
   <div class="hero-content">
-    <p class="seasonal-marker">立夏 &mdash; Beginning of Summer</p>
     <p class="hero-en">Star Reading &amp; Aromatherapy</p>
     <h1 class="hero-title">
       あなたの魂が<br>
@@ -741,6 +756,14 @@ footer .footer-logo {
     <p class="section-label reveal">Dragon Head Reading</p>
     <h2 class="section-title reveal">龍頭図セッション</h2>
     <div class="section-divider reveal"></div>
+
+    <div class="session-question reveal">
+      <p>星詠みは占いですか、とよく聞かれます。</p>
+      <p>違うとも言えないのですが、当たる・当たらないという占いとは、少し違う気がしています。</p>
+      <p>星は、意識であり、エネルギー。それぞれが固有のエネルギーを放っています。</p>
+      <p class="session-question-finale">強いて言うなら、星詠みは<br>——あなたの神話を詠むことです。</p>
+    </div>
+
     <p class="session-intro reveal">
       ドラゴンヘッド（ノースノード）は、魂が「今生で向かう方向」を示す羅針盤です。
       あなたの龍頭図を読み解くことで、過去生からの記憶（ドラゴンテール）と、今生で開花させるべき資質（ドラゴンヘッド）の両方を丁寧に紐解きます。運命は固定されていません。星は、可能性の地図です。
