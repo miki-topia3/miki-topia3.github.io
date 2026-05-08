@@ -441,9 +441,20 @@ section { padding: 100px 24px; }
   background-image: url('images/treatment.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(18px) saturate(0.95);
-  opacity: 0.42;
-  transform: scale(1.1);
+  filter: blur(10px) saturate(1.0);
+  opacity: 0.65;
+  transform: scale(1.08);
+  z-index: 0;
+  pointer-events: none;
+}
+#aroma::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg,
+    rgba(250,252,250,0.55) 0%,
+    rgba(250,252,250,0.4) 50%,
+    rgba(250,252,250,0.55) 100%);
   z-index: 0;
   pointer-events: none;
 }
@@ -473,8 +484,8 @@ section { padding: 100px 24px; }
   background-image: url('images/rose.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(5px) saturate(0.95);
-  opacity: 0.55;
+  filter: blur(2.5px) saturate(1.0);
+  opacity: 0.85;
   z-index: -1;
   border-radius: 20px;
 }
@@ -482,7 +493,7 @@ section { padding: 100px 24px; }
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,250,252,0.7));
+  background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,250,252,0.55));
   z-index: -1;
   border-radius: 20px;
 }
