@@ -475,7 +475,7 @@ section { padding: 100px 24px; }
 }
 .aroma-card-j {
   position: relative;
-  isolation: isolate;
+  background: transparent;
 }
 .aroma-card-j::before {
   content: '';
@@ -484,18 +484,22 @@ section { padding: 100px 24px; }
   background-image: url('images/rose.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(2.5px) saturate(1.0);
-  opacity: 0.85;
-  z-index: -1;
-  border-radius: 20px;
+  filter: blur(3px) saturate(1.0);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 .aroma-card-j::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,250,252,0.55));
-  z-index: -1;
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,250,252,0.7));
+  z-index: 1;
+  pointer-events: none;
+}
+.aroma-card-j > * {
+  position: relative;
+  z-index: 2;
 }
 .aroma-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,74,114,0.1); }
 .aroma-header {
