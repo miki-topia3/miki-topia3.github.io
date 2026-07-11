@@ -429,36 +429,7 @@ section { padding: 100px 24px; }
 }
 
 /* ─── AROMA ─── */
-#aroma {
-  position: relative;
-  background: #fafcfa;
-  overflow: hidden;
-}
-#aroma::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/treatment.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px) saturate(1.0);
-  opacity: 0.65;
-  transform: scale(1.08);
-  z-index: 0;
-  pointer-events: none;
-}
-#aroma::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(180deg,
-    rgba(250,252,250,0.55) 0%,
-    rgba(250,252,250,0.4) 50%,
-    rgba(250,252,250,0.55) 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-#aroma > * { position: relative; z-index: 1; }
+#aroma { background: #fafcfa; }
 .aroma-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
   max-width: 880px; margin: 0 auto;
@@ -470,36 +441,6 @@ section { padding: 100px 24px; }
   border-radius: 20px; overflow: hidden;
   border: 1px solid rgba(26,155,191,0.12);
   transition: transform 0.3s, box-shadow 0.3s;
-  background: #ffffff;
-  position: relative;
-}
-.aroma-card-j {
-  position: relative;
-  background: transparent;
-}
-.aroma-card-j::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/rose.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(3px) saturate(1.0);
-  opacity: 1;
-  z-index: 0;
-  pointer-events: none;
-}
-.aroma-card-j::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,250,252,0.7));
-  z-index: 1;
-  pointer-events: none;
-}
-.aroma-card-j > * {
-  position: relative;
-  z-index: 2;
 }
 .aroma-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,74,114,0.1); }
 .aroma-header {
@@ -754,18 +695,23 @@ footer .footer-logo {
   <div class="hero-content">
     <p class="hero-en">Star Reading &amp; Aromatherapy</p>
     <h1 class="hero-title">
-      あなたの魂が<br>
-      <em>選んできた道</em>を<br>
-      星と香りで<span class="accent-aizen">統合する</span>
+      あなたの星が、<br>
+      <em>エネルギー</em>に<span class="accent-aizen">なる。</span>
     </h1>
     <p class="hero-sub">
-      龍頭図（魂の設計図）による星詠み<br>
-      ホスピタリティ &ensp;｜&ensp; 技術 &ensp;｜&ensp; 有機化合物
+      星詠み &ensp;×&ensp; アロマセラピー<br>
+      生年月日から読み解く、生まれ持った資質と今の流れ。<br>
+      25年以上の臨床経験をもつセラピストによる、心と体のケア。<br>
+      大阪・北摂 ／ オンライン対応
     </p>
     <div class="hero-cta">
-      <a href="#session" class="btn-primary">セッションを見る</a>
-      <a href="#contact" class="btn-outline">お問い合わせ</a>
+      <a href="#session" class="btn-primary">メニュー・料金を見る</a>
+      <a href="https://ig.me/m/miki13tenti" class="btn-outline" target="_blank" rel="noopener">ご予約はこちら</a>
     </div>
+    <p style="font-size:0.85rem;color:rgba(214,240,240,0.7);letter-spacing:0.08em;line-height:1.9;margin-top:20px;animation:fadeUp 1.2s 0.8s ease-out both;">
+      ご予約はInstagramのDMで承ります<br>
+      ① ご希望メニュー&ensp;② ご希望日時 をお送りください
+    </p>
     <div class="hero-sns">
       <a href="https://www.instagram.com/miki13tenti" class="sns-link" aria-label="Instagram（星詠み）" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
@@ -970,7 +916,7 @@ footer .footer-logo {
     <h2 class="section-title reveal">アロマセラピーメニュー</h2>
     <div class="section-divider reveal"></div>
     <div class="aroma-grid">
-      <div class="aroma-card aroma-card-j reveal">
+      <div class="aroma-card reveal">
         <div class="aroma-header">
           <div class="aroma-icon">🌹</div>
           <div>
@@ -1111,7 +1057,7 @@ footer .footer-logo {
     <h2 class="section-title reveal" style="text-align:center">空き状況</h2>
     <div class="section-divider reveal" style="margin:0 auto 16px"></div>
     <p class="reveal" style="text-align:center;font-size:0.95rem;color:var(--text-mid);margin-bottom:20px;line-height:2;">
-      ご希望の日時をご確認のうえ、下のお問い合わせフォームまたはメールにてご連絡ください。
+      ご希望の日時をご確認のうえ、InstagramのDMまたはメールにてご連絡ください。
     </p>
     <p class="reveal" style="text-align:center;font-size:0.95rem;color:var(--ocean-mid);margin-bottom:36px;line-height:1.9;">
       <strong style="font-weight:500;">【予約可能日の見方】</strong><br>
@@ -1130,9 +1076,12 @@ footer .footer-logo {
     <h2 class="section-title reveal" style="text-align:center">ご予約・<br>お問い合わせ</h2>
     <div class="section-divider reveal" style="margin:0 auto 40px"></div>
     <p class="contact-intro reveal">
-      ご質問やセッションのご相談は、メールにてお気軽にどうぞ。<br>
-      2〜3営業日以内にご返信いたします。
+      ご予約・ご相談は、InstagramのDMからが便利です。<br>
+      メールでも承ります。2〜3営業日以内にご返信いたします。
     </p>
+    <div class="reveal" style="text-align:center;margin-bottom:40px;">
+      <a href="https://ig.me/m/miki13tenti" class="btn-primary" target="_blank" rel="noopener">Instagramで予約・相談する</a>
+    </div>
     <div class="contact-mail reveal">
       <p class="contact-mail-label">Mail</p>
       <p class="contact-mail-address">shizennothikara19♪gmail.com</p>
