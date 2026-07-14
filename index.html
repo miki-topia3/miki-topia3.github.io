@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bayleaf | 星詠み・アロマセラピー</title>
+<title>Bayleaf（ベイリーフ）｜龍頭図の星詠み×アロマセラピー｜豊中・北摂／オンライン</title>
+<meta name="description" content="大阪・豊中（北摂）とオンラインで承る、龍頭図（ドラコニック占星術）の星詠みとアロマセラピーのプライベートサロンBayleaf。25年以上の臨床経験を持つセラピストが、魂のテーマを読み解き、あなたに合う精油をブレンドします。">
+<meta property="og:title" content="Bayleaf（ベイリーフ）｜龍頭図の星詠み×アロマセラピー">
+<meta property="og:description" content="龍頭図の星詠みとアロマセラピーのプライベートサロン。豊中・北摂／オンライン対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miki-topia3.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
@@ -343,6 +348,88 @@ section { padding: 100px 24px; }
   border-top: 1px solid rgba(62,207,190,0.15);
   font-size: 0.75rem; color: var(--dawn-gold); letter-spacing: 0.1em;
 }
+.session-card { display: flex; flex-direction: column; position: relative; }
+.card-badge {
+  position: absolute; top: -12px; left: 24px;
+  padding: 4px 14px; border-radius: 30px;
+  font-size: 0.7rem; letter-spacing: 0.14em;
+  background: linear-gradient(135deg, var(--dawn-gold), var(--dawn-warm));
+  color: var(--ocean-deep);
+  box-shadow: 0 4px 14px rgba(245,200,66,0.35);
+}
+.card-features {
+  list-style: none; margin: 18px 0 0; padding: 0;
+  font-size: 0.82rem; line-height: 1.9; color: rgba(214,240,240,0.85);
+}
+.card-features li::before { content: '◆ '; color: var(--aqua); font-size: 0.7em; }
+.card-cta {
+  display: block; text-align: center; margin-top: 22px;
+  padding: 12px 10px; border-radius: 40px;
+  font-size: 0.85rem; letter-spacing: 0.12em; text-decoration: none;
+  background: linear-gradient(135deg, var(--dawn-gold), var(--dawn-warm));
+  color: var(--ocean-deep);
+  box-shadow: 0 4px 16px rgba(245,200,66,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(245,200,66,0.45); }
+.card-cta-light {
+  background: transparent; color: var(--aqua);
+  border: 1px solid rgba(62,207,190,0.5); box-shadow: none;
+}
+.card-cta-light:hover { background: rgba(62,207,190,0.08); box-shadow: none; }
+.session-note {
+  max-width: 640px; margin: 40px auto 0; text-align: center;
+  font-size: 0.88rem; line-height: 2; color: rgba(214,240,240,0.7);
+}
+
+/* ─── EVENT (期間限定) ─── */
+#event {
+  background: linear-gradient(150deg, #041d30 0%, #0a3a5c 55%, #114a6e 100%);
+  color: var(--foam); position: relative; overflow: hidden;
+}
+#event::before {
+  content: '☊';
+  position: absolute; left: -4%; bottom: -8%;
+  font-size: 26vw; color: rgba(245,200,66,0.05); line-height: 1;
+}
+#event .section-label { color: var(--dawn-gold); }
+#event .section-divider { background: linear-gradient(to right, var(--dawn-gold), transparent); }
+.event-intro {
+  font-size: 0.98rem; line-height: 2.2; color: rgba(214,240,240,0.85);
+  max-width: 640px; margin-bottom: 52px;
+}
+.event-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px;
+}
+.event-card {
+  position: relative; display: flex; flex-direction: column;
+  padding: 40px 30px 32px;
+  border: 1px solid rgba(245,200,66,0.3); border-radius: 16px;
+  background: rgba(255,255,255,0.045); backdrop-filter: blur(8px);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,200,66,0.6);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+}
+.event-period {
+  display: inline-block; align-self: flex-start;
+  margin-bottom: 16px; padding: 4px 14px; border-radius: 30px;
+  font-size: 0.72rem; letter-spacing: 0.14em;
+  border: 1px solid rgba(245,200,66,0.5); color: var(--dawn-gold);
+}
+.event-title { font-size: 1.05rem; letter-spacing: 0.08em; color: var(--dawn-gold); margin-bottom: 6px; }
+.event-sub { font-size: 0.8rem; letter-spacing: 0.06em; color: rgba(214,240,240,0.6); margin-bottom: 16px; }
+.event-desc { font-size: 0.93rem; line-height: 2; color: rgba(214,240,240,0.82); }
+.event-price {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid rgba(245,200,66,0.2);
+  font-size: 0.8rem; color: var(--dawn-gold); letter-spacing: 0.1em;
+}
+@media (max-width: 720px) {
+  .event-cards { grid-template-columns: 1fr; }
+}
 
 /* sample reading (folded) */
 .sample-reading {
@@ -659,6 +746,7 @@ footer .footer-logo {
   <ul class="nav-links">
     <li><a href="#about">プロフィール</a></li>
     <li><a href="#session">龍頭図セッション</a></li>
+    <li><a href="#event">期間限定</a></li>
     <li><a href="#aroma">アロマセラピー</a></li>
     <li><a href="#app">アプリ</a></li>
     <li><a href="#calendar">空き状況</a></li>
@@ -673,6 +761,7 @@ footer .footer-logo {
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="toggleMenu()">プロフィール</a>
   <a href="#session" onclick="toggleMenu()">龍頭図セッション</a>
+  <a href="#event" onclick="toggleMenu()">期間限定</a>
   <a href="#aroma" onclick="toggleMenu()">アロマセラピー</a>
   <a href="#app" onclick="toggleMenu()">アプリ</a>
   <a href="#calendar" onclick="toggleMenu()">空き状況</a>
@@ -775,24 +864,52 @@ footer .footer-logo {
     </p>
     <div class="session-cards">
       <div class="session-card reveal">
+        <span class="card-badge">初めての方はこちら</span>
         <div class="card-icon">🌑</div>
         <p class="card-title">ファースト龍頭図セッション</p>
-        <p class="card-desc">初めての方向け。出生データをもとに龍頭図を作成し、魂の方向性と現在のテーマをお伝えします。録音・PDFレポート付き。</p>
+        <p class="card-desc">初めての方向け。出生データをもとに龍頭図を作成し、魂の方向性と現在のテーマをお伝えします。</p>
+        <ul class="card-features">
+          <li>60分（オンライン／対面）</li>
+          <li>セッション録音データ付き</li>
+          <li>PDFレポート付き</li>
+        </ul>
         <p class="card-price">60分 / ¥15,000（税込）</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">このコースをDMで予約する</a>
       </div>
       <div class="session-card reveal">
         <div class="card-icon">🌓</div>
         <p class="card-title">深読みセッション</p>
         <p class="card-desc">特定のテーマ（仕事・人間関係・健康など）に絞って深く読みます。現在のトランジットとの関係も丁寧に紐解きます。</p>
+        <ul class="card-features">
+          <li>90分（オンライン／対面）</li>
+          <li>セッション録音データ付き</li>
+          <li>PDFレポート付き</li>
+          <li>ご予約は1週間前までがおすすめ</li>
+        </ul>
         <p class="card-price">90分 / ¥22,000（税込）</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">このコースをDMで予約する</a>
       </div>
       <div class="session-card reveal">
+        <span class="card-badge">Bayleafオリジナル</span>
         <div class="card-icon">🌕</div>
         <p class="card-title">星×香りの統合セッション</p>
         <p class="card-desc">星詠みとアロマセラピーを組み合わせたオリジナルセッション。龍頭図の読み解きに加え、あなたの魂のテーマに合った精油をブレンドしてお届けします。</p>
+        <ul class="card-features">
+          <li>120分（オンライン／対面）</li>
+          <li>セッション録音データ付き</li>
+          <li>PDFレポート付き</li>
+          <li>あなただけのブレンド精油をお届け</li>
+        </ul>
         <p class="card-price">120分 / ¥28,000（税込）</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">このコースをDMで予約する</a>
       </div>
     </div>
+
+    <p class="session-note reveal">
+      すべてのセッションは、オンライン（Zoom）と対面（大阪・豊中／北摂）のどちらでも承ります。<br>
+      星詠みのご予約は、<strong style="color:var(--dawn-gold);font-weight:400;">1週間前まで</strong>にご予約いただくことで、エネルギーを読む精度が上がりやすくなります。<br>
+      特に深読みセッションは、お早めのご予約がおすすめです。迷われたら、まずはInstagramのDMでお気軽にご相談ください。
+    </p>
 
     <!-- Sample reading -->
     <div class="sample-reading reveal">
@@ -909,6 +1026,48 @@ footer .footer-logo {
   </div>
 </section>
 
+<!-- EVENT（期間限定）
+  ★このセクションは「星の暦」に合わせて中身を入れ替えて使い回せます。
+  イベントを追加・変更するときは <div class="event-card"> のブロックを
+  コピーして、期間・タイトル・説明・価格を書き換えるだけでOKです。
+-->
+<section id="event">
+  <div class="section-inner">
+    <p class="section-label reveal">Limited Session</p>
+    <h2 class="section-title reveal">星のイベントセッション<br><small style="font-size:0.55em;letter-spacing:0.12em;color:rgba(214,240,240,0.6)">— 期間限定 —</small></h2>
+    <div class="section-divider reveal"></div>
+
+    <p class="event-intro reveal">
+      星の暦には、大きなエネルギーの切り替わりが訪れる瞬間があります。<br>
+      Bayleafでは、その節目に合わせた期間限定のセッションをお届けしています。今この時にしか読めない星と、今この時のためのブレンドを。
+    </p>
+
+    <div class="event-cards">
+      <div class="event-card reveal">
+        <span class="event-period">7/14 蟹座新月 〜 8/8 ピーク</span>
+        <p class="event-title">🦁 ライオンズゲート ブレンドセッション</p>
+        <p class="event-sub">Lions Gate Portal 2026</p>
+        <p class="event-desc">
+          蟹座新月からライオンズゲートが最大に開く8月8日へ——一年でもっとも光の強まる期間に、あなたの星のテーマをミニリーディングで読み解き、この時期のあなたに必要な香りをブレンドしてお渡しします。
+        </p>
+        <p class="event-price">60分 / ¥12,000（税込）・ブレンド精油付き</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">DMで申し込む</a>
+      </div>
+
+      <div class="event-card reveal">
+        <span class="event-period">7/27前後 〜 8月末</span>
+        <p class="event-title">☊ ドラゴンヘッド水瓶座入り 記念セッション</p>
+        <p class="event-sub">North Node enters Aquarius</p>
+        <p class="event-desc">
+          約1年半ぶりに、魂の羅針盤ドラゴンヘッド（龍頭）が星座を移ります。魚座から水瓶座へ——時代のテーマが切り替わるこの節目に、あなたの龍頭図と新しいノード軸の響き合いを読み解く記念セッションです。
+        </p>
+        <p class="event-price">90分 / ¥18,000（税込）</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">DMで申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AROMA -->
 <section id="aroma">
   <div class="section-inner">
@@ -1007,12 +1166,23 @@ footer .footer-logo {
       </div>
     </div>
 
+    <div class="reveal" style="text-align:center; margin-top:48px;">
+      <a href="https://ig.me/m/miki13tenti" class="btn-primary" target="_blank" rel="noopener">アロマの施術をDMで予約する</a>
+    </div>
+
     <div class="aroma-notice reveal">
       <h3>ご利用にあたって</h3>
       <p>当サロンの施術は、心身の調和と休息を目的としたリラクセーションです。医療行為ではなく、病気の診断・治療・予防や、医薬品の代替となるものではありません。</p>
       <p>植物オイル・精油を使用するため、アレルギー体質の方（特にPコースは落花生アレルギーのある方）は、事前にご相談ください。</p>
       <p>妊娠中の方、通院中の方、持病のある方は、かかりつけ医の承諾を得てからのご利用をお願いしております。</p>
       <p>ご不安なことがあれば、一人で悩まずにまずはご相談ください。ご体調やご希望をうかがいながら、お一人おひとりに合った形をご一緒に考えます。</p>
+    </div>
+
+    <div class="aroma-notice reveal" style="margin-top:24px;">
+      <h3>お支払い・キャンセルについて</h3>
+      <p>お支払いは、現金または銀行振込にて承ります（オンラインセッションは事前振込をお願いしております）。</p>
+      <p>ご予約の変更・キャンセルは、前日までにご連絡ください。当日のキャンセルは、料金の50％を申し受ける場合がございます。</p>
+      <p>体調がすぐれない場合は、どうぞ無理をなさらずご相談ください。日程の振替も承ります。</p>
     </div>
   </div>
 </section>
@@ -1098,7 +1268,8 @@ footer .footer-logo {
     </ul>
     <p class="contact-footnote reveal">
       ※ いただいた個人情報は、ご連絡の目的のみに使用いたします。<br>
-      ※ セッションはオンライン（Zoom）および対面（大阪・北摂）にて承ります。
+      ※ セッションはオンライン（Zoom）および対面（大阪・北摂）にて承ります。<br>
+      ※ 星詠みのご予約は、1週間前までにお申し込みいただくことをおすすめしております。
     </p>
   </div>
 </section>
