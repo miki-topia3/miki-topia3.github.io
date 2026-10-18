@@ -333,6 +333,9 @@ section { padding: 100px 24px; }
 .session-cards {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
 }
+@media (min-width: 640px) {
+  .session-cards { grid-template-columns: repeat(2, 1fr); }
+}
 .session-card {
   padding: 36px 28px;
   border: 1px solid rgba(62,207,190,0.2);
@@ -884,6 +887,19 @@ footer .footer-logo {
     <div class="session-cards">
       <div class="session-card reveal">
         <span class="card-badge">初めての方はこちら</span>
+        <div class="card-icon">🌒</div>
+        <p class="card-title">ドラゴンヘッド ミニ詠み</p>
+        <p class="card-desc">生年月日から、あなたのドラゴンヘッドのサインを読み解きます。<br>ドラゴンヘッドは、魂がこの生で統合しようとしているエネルギー。向かい側のドラゴンテイルは、長い魂の旅の中であなたが磨いてきた、すでに深く知っているエネルギーです。その二つを一組で読み、今のあなたの魂の方向をお伝えします。<br><em>向かうのではない。思い出すのです。</em></p>
+        <ul class="card-features">
+          <li>30分（オンライン／対面）</li>
+          <li>生年月日だけでお申し込みいただけます（出生時間は不要です）</li>
+          <li>ドラゴンヘッドとドラゴンテイル、一組の読み解き</li>
+        </ul>
+        <p class="card-price">30分 / ¥3,000（税込）<br>30分・PDFレポート付き / ¥5,000（税込）</p>
+        <a class="card-cta" href="https://ig.me/m/miki13tenti" target="_blank" rel="noopener">このコースをDMで予約する</a>
+        <p style="margin-top:14px;font-size:0.72rem;line-height:1.8;color:rgba(214,240,240,0.6);">※ドラゴンヘッドのサインが切り替わる時期にお生まれの方は、出生時間をおうかがいすることがあります。</p>
+      </div>
+      <div class="session-card reveal">
         <div class="card-icon">🌑</div>
         <p class="card-title">ファースト龍頭図セッション</p>
         <p class="card-desc">初めての方向け。出生データをもとに龍頭図を作成し、魂の方向性と現在のテーマをお伝えします。</p>
