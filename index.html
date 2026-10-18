@@ -39,7 +39,13 @@ body {
   background: var(--white);
   color: var(--text-dark);
   overflow-x: hidden;
+  /* 日本語を文節の切れ目で折り返し、行末に一文字だけ残らないようにする */
+  word-break: auto-phrase;
+  text-wrap: pretty;
 }
+h1, h2, h3 { text-wrap: balance; }
+/* ひとかたまりで折り返したい語句 */
+.nb { display: inline-block; }
 
 /* ─── NAV ─── */
 nav {
@@ -736,6 +742,16 @@ footer .footer-logo {
   .phone-frame { width: 180px; height: 340px; }
   .app-mockup { order: -1; }
 }
+
+/* スマホ表示の調整（パソコンの見た目は変えない） */
+@media (max-width: 600px) {
+  .hero-content { padding: 96px 18px 140px; }
+  .hero-en { letter-spacing: 0.18em; }
+  .hero-title { font-size: clamp(1.75rem, 8.2vw, 2.4rem); letter-spacing: 0.02em; }
+  .hero-sub { font-size: 0.95rem; letter-spacing: 0.04em; line-height: 2; margin-bottom: 36px; }
+  .btn-primary, .btn-outline { padding: 14px 30px; letter-spacing: 0.12em; }
+  .scroll-hint { display: none; }
+}
 </style>
 </head>
 <body>
@@ -785,12 +801,12 @@ footer .footer-logo {
     <p class="hero-en">Star Reading &amp; Aromatherapy</p>
     <h1 class="hero-title">
       あなたの星が、<br>
-      <em>エネルギー</em>に<span class="accent-aizen">なる。</span>
+      <span class="nb"><em>エネルギー</em>に<span class="accent-aizen">なる。</span></span>
     </h1>
     <p class="hero-sub">
       星詠み &ensp;×&ensp; アロマセラピー<br>
-      生年月日から読み解く、生まれ持った資質と今の流れ。<br>
-      25年以上の臨床経験をもつセラピストによる、心と体のケア。<br>
+      <span class="nb">生年月日から読み解く、</span><span class="nb">生まれ持った資質と</span><span class="nb">今の流れ。</span><br>
+      <span class="nb">25年以上の臨床経験をもつ</span><span class="nb">セラピストによる、</span><span class="nb">心と体のケア。</span><br>
       大阪・北摂 ／ オンライン対応
     </p>
     <div class="hero-cta">
@@ -799,7 +815,7 @@ footer .footer-logo {
     </div>
     <p style="font-size:0.85rem;color:rgba(214,240,240,0.7);letter-spacing:0.08em;line-height:1.9;margin-top:20px;animation:fadeUp 1.2s 0.8s ease-out both;">
       ご予約はInstagramのDMで承ります<br>
-      ① ご希望メニュー&ensp;② ご希望日時 をお送りください
+      <span class="nb">① ご希望メニュー</span>&ensp;<span class="nb">② ご希望日時</span> <span class="nb">をお送りください</span>
     </p>
     <div class="hero-sns">
       <a href="https://www.instagram.com/miki13tenti" class="sns-link" aria-label="Instagram（星詠み）" target="_blank" rel="noopener">
