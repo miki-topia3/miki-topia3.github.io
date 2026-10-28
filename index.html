@@ -592,6 +592,15 @@ section { padding: 100px 24px; }
 .aroma-notice p:last-child { margin-bottom: 0; }
 
 /* ─── APP ─── */
+#starmap { background: var(--white); padding: 100px 24px; }
+.starmap-card { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 40px; }
+.starmap-thumb { background: #070d1a; border-radius: 4px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.starmap-thumb svg { width: 78%; height: auto; }
+.starmap-text p { font-size: 1rem; line-height: 2.1; color: var(--text-mid); margin-bottom: 20px; }
+.starmap-text ul { list-style: none; margin: 0 0 32px; display: flex; flex-direction: column; gap: 8px; }
+.starmap-text li { padding-left: 1.4em; position: relative; font-size: 0.95rem; color: var(--text-mid); }
+.starmap-text li::before { content: '◈'; position: absolute; left: 0; color: var(--ocean-light); font-size: 0.7rem; top: 0.35em; }
+@media (max-width: 768px) { .starmap-card { grid-template-columns: 1fr; gap: 32px; } }
 #app {
   background: linear-gradient(135deg, #062a44 0%, #0a5472 50%, #0d8a8a 100%);
   color: var(--foam);
@@ -768,6 +777,7 @@ footer .footer-logo {
     <li><a href="#event">期間限定</a></li>
     <li><a href="#aroma">アロマセラピー</a></li>
     <li><a href="#app">アプリ</a></li>
+    <li><a href="#starmap">星の地図</a></li>
     <li><a href="#calendar">空き状況</a></li>
     <li><a href="#contact">ご予約・お問い合わせ</a></li>
   </ul>
@@ -783,6 +793,7 @@ footer .footer-logo {
   <a href="#event" onclick="toggleMenu()">期間限定</a>
   <a href="#aroma" onclick="toggleMenu()">アロマセラピー</a>
   <a href="#app" onclick="toggleMenu()">アプリ</a>
+  <a href="#starmap" onclick="toggleMenu()">星の地図</a>
   <a href="#calendar" onclick="toggleMenu()">空き状況</a>
   <a href="#contact" onclick="toggleMenu()">ご予約・お問い合わせ</a>
 </div>
@@ -1148,6 +1159,35 @@ footer .footer-logo {
         <div class="phone-star">⭐</div>
         <p class="phone-title">星と香り</p>
         <p class="phone-sub">Aroma Star</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAR MAP -->
+<section id="starmap">
+  <div class="section-inner">
+    <p class="section-label reveal">Star Map</p>
+    <h2 class="section-title reveal">星の地図<br><small style="font-size:0.55em;letter-spacing:0.12em;color:var(--text-light)">五芒星の結界</small></h2>
+    <div class="section-divider reveal"></div>
+    <div class="starmap-card">
+      <a class="starmap-thumb reveal" href="gobosei-kekkai.html" aria-label="五芒星の結界の地図をひらく">
+        <svg viewBox="-110 -110 220 220" role="img" aria-hidden="true">
+          <circle r="96" fill="none" stroke="#33457a" stroke-width="1"/>
+          <polygon points="0,-90 52.9,72.8 -85.6,-27.8 85.6,-27.8 -52.9,72.8" fill="none" stroke="#d8b45a" stroke-width="2.2" stroke-linejoin="round"/>
+          <polygon points="0,34.4 -32.7,10.6 -20.2,-27.8 20.2,-27.8 32.7,10.6" fill="#7fb39a" fill-opacity="0.18" stroke="#7fb39a" stroke-width="1"/>
+          <circle r="5" fill="none" stroke="#d8b45a" stroke-width="1.4"/><circle r="1.8" fill="#d8b45a"/>
+        </svg>
+      </a>
+      <div class="starmap-text reveal">
+        <p>近畿の五つの聖地を結ぶと、大きな五芒星が浮かびあがります。言い伝えをそのまま信じるのではなく、国土地理院の座標で一つずつ測って描いた地図です。</p>
+        <ul>
+          <li>五芒星の内側に入る、六つの古代の都の跡</li>
+          <li>伊勢と出雲を結ぶ線と、熊野から平城宮への南北線</li>
+          <li>雨の龍神を祀る、貴船と丹生川上を結ぶ南北の軸</li>
+          <li>点をタップすると、距離と方位が表示されます</li>
+        </ul>
+        <a href="gobosei-kekkai.html" class="btn-primary">地図をひらく</a>
       </div>
     </div>
   </div>
