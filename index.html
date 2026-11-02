@@ -1323,10 +1323,10 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 (function(){
   var SG=['牡羊','牡牛','双子','蟹','獅子','乙女','天秤','蠍','射手','山羊','水瓶','魚'];
   var DH=135+14/60+45/3600;
-  var P=[{n:'ドラゴンヘッド',l:DH,c:'#f5c842'},{n:'ドラゴンテイル',l:DH+180,c:'#f0a840'},{n:'太陽',l:28+19/60+10/3600,c:'#3ecfbe'},{n:'月',l:195+19/60+10/3600,c:'#d6f0f0'}];
+  var P=[{n:'ドラゴンヘッド',l:DH,c:'#f5c842'},{n:'ドラゴンテイル',l:DH+180,c:'#f0a840'},{n:'太陽',l:28+19/60+21/3600,c:'#3ecfbe'},{n:'月',l:195+18/60+55/3600,c:'#d6f0f0'}];
   var cx=190,cy=170,off=0,anim=null,mode=0;
   function xy(r,a){var t=a*Math.PI/180;return[cx-r*Math.cos(t),cy+r*Math.sin(t)];}
-  function fmt(l){l=((l%360)+360)%360;var m=Math.floor((l%30)*60+1e-6),s=Math.floor(l/30);if(m>=1800){m=0;s=(s+1)%12;}return SG[s]+'座'+Math.floor(m/60)+'°'+(m%60<10?'0':'')+(m%60)+"'";}
+  function fmt(l){l=((l%360)+360)%360;var m=Math.round((l%30)*60),s=Math.floor(l/30);if(m>=1800){m=0;s=(s+1)%12;}return SG[s]+'座'+Math.floor(m/60)+'°'+(m%60<10?'0':'')+(m%60)+"'";}
   function draw(){
     var h='';
     for(var k=0;k<12;k++){
