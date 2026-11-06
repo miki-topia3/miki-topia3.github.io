@@ -784,6 +784,19 @@ footer .footer-logo {
   .btn-primary, .btn-outline { padding: 14px 30px; letter-spacing: 0.12em; }
   .scroll-hint { display: none; }
 }
+
+/* ─── 天と地の背景（2026/11/6）：上は水色→エメラルドの青、下は黄土色→赤土色。ページ全体で一本のグラデーション ─── */
+html { background: linear-gradient(to bottom, #cdeff8 0%, #7fd6d9 22%, #17a2a0 46%, #d2ac5c 54%, #c39143 70%, #9b4a2c 100%); }
+body { background: transparent; }
+#hero, #about, #session, #event, #aroma, #app, #starmap, #calendar, #contact { background: transparent; }
+#session::before, #event::before { display: none; }
+.section-inner { border-radius: 18px; padding: 56px 44px; box-sizing: border-box; }
+#session .section-inner, #event .section-inner, #app .section-inner { background: rgba(6,42,68,0.74); }
+#about .section-inner, #aroma .section-inner, #starmap .section-inner, #calendar .section-inner { background: rgba(255,255,255,0.84); }
+#contact > * { background: rgba(255,255,255,0.84); border-radius: 18px; }
+#hero .hero-content { background: rgba(6,42,68,0.55); border-radius: 18px; padding: 40px 32px; }
+.wave-container { opacity: .5; }
+@media (max-width: 768px) { .section-inner { padding: 36px 20px; } }
 </style>
 </head>
 <body>
@@ -1230,7 +1243,7 @@ footer .footer-logo {
 </section>
 
 <!-- CALENDAR -->
-<section id="calendar" style="background:#f5fbfc; padding:100px 24px;">
+<section id="calendar" style="padding:100px 24px;">
   <div class="section-inner">
     <p class="section-label reveal" style="text-align:center">Schedule</p>
     <h2 class="section-title reveal" style="text-align:center">空き状況</h2>
