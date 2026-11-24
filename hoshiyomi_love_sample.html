@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>恋と結婚の星詠み（見本）</title>
+<style>
+/*
+VOICE: 静かで深い、です・ます調の鑑定書面。余白を多く。
+IDEA: 手渡しの星詠みノート（bayleafみきの見本の書面のタッチ）。
+PICTURE: 宵の明星と、曲がり角に立つ金星を描いた小さな星図。
+COLOUR and TYPE: 見本の紺・土色・砂色・生成り。明朝。60代でも読める大きさ。
+LAYOUT: 一段組み。見出しは左の土色の線。要の一文は引用で立てる。
+*/
+:root{
+  color-scheme:light dark;
+  --navy:light-dark(#1a2240,#d9dcef);
+  --indigo:light-dark(#2d3566,#b9bfe6);
+  --earth:light-dark(#8f6b42,#d6b48a);
+  --sand:light-dark(#e8dcc4,#262c4a);
+  --bg:light-dark(#f7f2e7,#141a33);
+  --ink:light-dark(#2a2a2a,#ece8de);
+  --line:light-dark(#c9b896,#4a4f70);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;background:var(--bg);color:var(--ink);line-height:2;overflow-x:clip}
+.wrap{max-width:740px;margin:0 auto;padding:56px 24px 80px}
+header{text-align:center;margin-bottom:40px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.ornament{color:var(--earth);letter-spacing:.4em;font-size:15px;margin-bottom:16px}
+h1{font-size:clamp(24px,5vw,32px);color:var(--navy);margin:0 0 12px;font-weight:500;letter-spacing:.05em;line-height:1.55;text-wrap:balance}
+.sub{color:var(--indigo);font-size:15px;letter-spacing:.1em}
+.sky{display:block;width:100%;max-width:520px;height:auto;margin:28px auto 4px}
+.sky-cap{text-align:center;font-size:13px;color:var(--indigo);margin:0}
+h2{color:var(--navy);font-size:20px;margin:52px 0 16px;padding-left:14px;border-left:3px solid var(--earth);font-weight:500;letter-spacing:.04em;line-height:1.6}
+h3{color:var(--indigo);font-size:18px;margin:36px 0 10px;font-weight:600;line-height:1.6}
+p{margin:0 0 18px;font-size:17px}
+.lead{color:var(--indigo);font-style:italic;text-align:center;margin:0 0 32px;font-size:17px}
+.data{background:var(--sand);padding:18px 22px;border-radius:4px;font-size:16px;color:var(--navy);margin:20px 0 28px;line-height:1.9}
+.data div{display:flex;flex-wrap:wrap;gap:0 .8em;padding:2px 0}
+.data b{color:var(--earth);font-weight:600;min-width:7.5em}
+.data span.h{color:var(--indigo);font-size:14px}
+blockquote{border-left:2px solid var(--earth);margin:26px 0;padding:4px 0 4px 20px;color:var(--indigo);font-style:italic;font-size:18px}
+em.star{color:var(--earth);font-style:normal;font-weight:600}
+dl.houses{margin:16px 0 24px;font-size:16px}
+dl.houses dt{color:var(--earth);font-weight:600;margin-top:14px}
+dl.houses dd{margin:2px 0 0 1em}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 20px;margin:18px 0 26px;font-size:16px}
+.pair .t{color:var(--earth);font-weight:600;font-size:15px;border-bottom:1px solid var(--line)}
+.pair div{padding:6px 0;border-bottom:1px dotted var(--line)}
+ul.sky-list{padding-left:1.2em;margin:12px 0 22px;font-size:16px}
+ul.sky-list li{margin:6px 0}
+.blend{background:var(--sand);border-radius:4px;padding:14px 20px 4px;margin:18px 0}
+.blend h3{margin:0 0 6px}
+.recipe{color:var(--earth);font-weight:600;font-size:17px;margin:0 0 10px}
+.caution{font-size:15px;color:var(--indigo)}
+ul.acts{padding-left:1.2em;margin:12px 0 22px;font-size:16px}
+ul.acts li{margin:14px 0;line-height:1.9}
+ul.acts b{color:var(--navy)}
+.closing{text-align:center;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);color:var(--earth);font-size:15px;letter-spacing:.3em}
+.sign{text-align:right;color:var(--navy);font-size:17px;margin-top:24px;letter-spacing:.05em}
+.note{font-size:13px;color:var(--indigo);margin-top:28px;line-height:1.8}
+.aroma{background:var(--sand);border-radius:4px;padding:16px 22px;margin:18px 0 22px}
+.aroma h4{margin:0 0 6px;color:var(--earth);font-size:17px;font-weight:600}
+.aroma p{margin:0 0 8px;font-size:16px}
+.aroma .how{font-size:15px;color:var(--indigo)}
+ol.act{padding-left:1.4em;margin:12px 0 22px;font-size:16px}
+ol.act li{margin:8px 0}
+.law{font-size:15px;color:var(--indigo);border-top:1px dotted var(--line);padding-top:10px;margin-top:6px}
+.chart{margin:18px auto 6px;max-width:100%}
+.wheel{display:block;width:100%;height:auto}
+.w-ring{fill:none;stroke:var(--earth);stroke-width:2.6}.w-line{stroke:var(--earth);stroke-width:2.6}
+.w-sign{font-size:21px;fill:var(--earth);font-weight:600}.w-house{stroke:var(--earth);stroke-width:1.4;opacity:.75}.w-axis{stroke:var(--indigo);stroke-width:4}
+.w-hnum{font-size:16px;fill:var(--indigo);font-weight:600}.w-ang{font-size:19px;fill:var(--indigo);font-weight:700}
+.w-tick{stroke:var(--indigo);stroke-width:3}.w-pl{font-size:26px;fill:var(--ink);font-weight:600}.w-key{fill:light-dark(#a0423a,#e8a196);font-weight:700}
+.chart-cap{text-align:center;font-size:19px;color:var(--indigo);margin:4px 0 6px}
+.legend{font-size:19px;color:var(--indigo);line-height:1.8;margin:0 0 20px}
+.bl{filter:blur(5px);user-select:none;pointer-events:none}
+.wm{position:fixed;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;z-index:9}
+.wm span{font-size:clamp(90px,22vw,220px);color:light-dark(rgba(160,66,58,.13),rgba(232,161,150,.16));transform:rotate(-24deg);font-weight:700;letter-spacing:.2em;white-space:nowrap}
+.sample-note{text-align:center;font-size:16px;color:var(--earth);border:1px solid var(--line);padding:10px 14px;margin:0 0 28px}
+@media(max-width:600px){.chart{margin-left:-20px;margin-right:-20px}.pair{grid-template-columns:minmax(0,1fr)}.pair .t:nth-child(2){display:none}.pair div:nth-child(even)::before{content:"魂　";color:var(--earth)}.pair div:nth-child(odd):not(.t)::before{content:"體　";color:var(--earth)}}
+@media(prefers-reduced-motion:no-preference){.venus{animation:glow 4s ease-in-out infinite}}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body>
+<div class="wm" aria-hidden="true"><span>見本</span></div>
+<div class="wrap">
+
+<header>
+  <div class="ornament">✦ ・ ✧ ・ ✦</div>
+  <h1>恋と結婚の星詠み<br>― 宵の明星を抱く牡牛座の金星 ―</h1>
+  <div class="sub">星詠みの見本　體のチャートと魂のチャート</div>
+  <svg class="sky" viewBox="0 0 520 260" role="img" aria-label="夜明けの太陽と、そのあとに輝く金星。金星はドラゴンヘッドとドラゴンテイルを結ぶ軸の曲がり角に立つ">
+    <defs>
+      <radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f3e2b8"/><stop offset="1" stop-color="#f3e2b8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <line x1="20" y1="200" x2="500" y2="200" stroke="currentColor" stroke-opacity=".25"/>
+    <path d="M90 200 A170 170 0 0 1 430 200" fill="none" stroke="#a8845c" stroke-opacity=".5" stroke-dasharray="3 6"/>
+    <circle cx="150" cy="186" r="22" fill="#d9a35b" opacity=".9"/>
+    <text x="150" y="232" text-anchor="middle" font-size="13" fill="#a8845c">太陽</text>
+    <circle class="venus" cx="232" cy="120" r="26" fill="url(#g)"/>
+    <circle cx="232" cy="120" r="6" fill="#f7efd8" stroke="#a8845c"/>
+    <text x="232" y="96" text-anchor="middle" font-size="13" fill="#a8845c">金星</text>
+    <line x1="232" y1="120" x2="420" y2="70" stroke="#5c6aa8" stroke-opacity=".7"/>
+    <line x1="232" y1="120" x2="290" y2="215" stroke="#5c6aa8" stroke-opacity=".7" stroke-dasharray="4 4"/>
+    <circle cx="420" cy="70" r="4" fill="#5c6aa8"/>
+    <text x="428" y="66" font-size="13" fill="#5c6aa8">ドラゴンヘッド</text>
+    <circle cx="290" cy="215" r="4" fill="#5c6aa8"/>
+    <text x="300" y="232" font-size="13" fill="#5c6aa8">ドラゴンテイル</text>
+    <g fill="#a8845c" opacity=".6"><circle cx="60" cy="50" r="1.5"/><circle cx="110" cy="80" r="1"/><circle cx="330" cy="40" r="1.5"/><circle cx="470" cy="130" r="1"/><circle cx="380" cy="150" r="1.2"/><circle cx="40" cy="140" r="1"/></g>
+  </svg>
+  <p class="sky-cap">夜明けに昇った太陽のあとを追い、日が沈んでから輝く金星</p>
+</header>
+
+<p class="sample-note">この星詠みは見本です。一部をぼかしています。</p>
+<p class="lead">愛は、遠くから探しにいくものではなく、自分の中に灯っているものです。</p>
+
+<p>この書面は、ひとつの出生図をもとに「恋愛と結婚」をテーマにした星詠みの見本です。金星を中心に、パートナーシップにかかわる星とすべてのハウスを詠み、星に合わせた香りのブレンドとおすすめの行動を添えています。</p>
+
+<h2>ふたつのチャートを読むということ</h2>
+<p>生まれたときの空をそのまま写したネイタルチャートは、地上で生きるからだの地図です。恋や結婚が現実の中でどんな形をとりやすいかを映します。</p>
+<p>龍頭図は、生まれたときのドラゴンヘッドを起点に星を置き直した魂の地図です。愛がどこへ向かおうとしているのかを映します。ふたつを重ねると、地上の恋と天の愛がどこで結ばれているかが見えてきます。</p>
+
+<div class="chart"><svg class="wheel" viewBox="-70 -70 660 660" role="img" aria-label="ネイタルチャート（ハウスはプラシーダス）"><circle cx="260.0" cy="260.0" r="252" class="w-ring"/><circle cx="260.0" cy="260.0" r="200" class="w-ring"/><circle cx="260.0" cy="260.0" r="116" class="w-ring"/><line x1="89.6" y1="155.3" x2="45.3" y2="128.1" class="w-line"/><text x="43.4" y="195.5" class="w-sign" text-anchor="middle" dominant-baseline="central">牡羊</text><line x1="60.1" y1="254.5" x2="8.1" y2="253.1" class="w-line"/><text x="40.2" y="312.5" class="w-sign" text-anchor="middle" dominant-baseline="central">牡牛</text><line x1="84.1" y1="355.2" x2="38.4" y2="380.0" class="w-line"/><text x="95.9" y="415.4" class="w-sign" text-anchor="middle" dominant-baseline="central">双子</text><line x1="155.3" y1="430.4" x2="128.1" y2="474.7" class="w-line"/><text x="195.5" y="476.6" class="w-sign" text-anchor="middle" dominant-baseline="central">蟹</text><line x1="254.5" y1="459.9" x2="253.1" y2="511.9" class="w-line"/><text x="312.5" y="479.8" class="w-sign" text-anchor="middle" dominant-baseline="central">獅子</text><line x1="355.2" y1="435.9" x2="380.0" y2="481.6" class="w-line"/><text x="415.4" y="424.1" class="w-sign" text-anchor="middle" dominant-baseline="central">乙女</text><line x1="430.4" y1="364.7" x2="474.7" y2="391.9" class="w-line"/><text x="476.6" y="324.5" class="w-sign" text-anchor="middle" dominant-baseline="central">天秤</text><line x1="459.9" y1="265.5" x2="511.9" y2="266.9" class="w-line"/><text x="479.8" y="207.5" class="w-sign" text-anchor="middle" dominant-baseline="central">蠍</text><line x1="435.9" y1="164.8" x2="481.6" y2="140.0" class="w-line"/><text x="424.1" y="104.6" class="w-sign" text-anchor="middle" dominant-baseline="central">射手</text><line x1="364.7" y1="89.6" x2="391.9" y2="45.3" class="w-line"/><text x="324.5" y="43.4" class="w-sign" text-anchor="middle" dominant-baseline="central">山羊</text><line x1="265.5" y1="60.1" x2="266.9" y2="8.1" class="w-line"/><text x="207.5" y="40.2" class="w-sign" text-anchor="middle" dominant-baseline="central">水瓶</text><line x1="164.8" y1="84.1" x2="140.0" y2="38.4" class="w-line"/><text x="104.6" y="95.9" class="w-sign" text-anchor="middle" dominant-baseline="central">魚</text><line x1="144.0" y1="260.0" x2="60.0" y2="260.0" class="w-axis"/><text x="165.7" y="286.7" class="w-hnum" text-anchor="middle" dominant-baseline="central">1</text><line x1="161.2" y1="320.7" x2="89.6" y2="364.7" class="w-house"/><text x="188.9" y="327.5" class="w-hnum" text-anchor="middle" dominant-baseline="central">2</text><line x1="194.2" y1="355.5" x2="146.5" y2="424.7" class="w-house"/><text x="221.1" y="349.9" class="w-hnum" text-anchor="middle" dominant-baseline="central">3</text><line x1="235.3" y1="373.3" x2="217.5" y2="455.4" class="w-axis"/><text x="260.5" y="358.0" class="w-hnum" text-anchor="middle" dominant-baseline="central">4</text><line x1="285.9" y1="373.1" x2="304.6" y2="455.0" class="w-house"/><text x="308.2" y="345.3" class="w-hnum" text-anchor="middle" dominant-baseline="central">5</text><line x1="343.5" y1="340.5" x2="404.0" y2="398.8" class="w-house"/><text x="350.9" y="296.7" class="w-hnum" text-anchor="middle" dominant-baseline="central">6</text><line x1="376.0" y1="260.0" x2="460.0" y2="260.0" class="w-axis"/><text x="354.3" y="233.3" class="w-hnum" text-anchor="middle" dominant-baseline="central">7</text><line x1="358.8" y1="199.3" x2="430.4" y2="155.3" class="w-house"/><text x="331.1" y="192.5" class="w-hnum" text-anchor="middle" dominant-baseline="central">8</text><line x1="325.8" y1="164.5" x2="373.5" y2="95.3" class="w-house"/><text x="298.9" y="170.1" class="w-hnum" text-anchor="middle" dominant-baseline="central">9</text><line x1="284.7" y1="146.7" x2="302.5" y2="64.6" class="w-axis"/><text x="259.5" y="162.0" class="w-hnum" text-anchor="middle" dominant-baseline="central">10</text><line x1="234.1" y1="146.9" x2="215.4" y2="65.0" class="w-house"/><text x="211.8" y="174.7" class="w-hnum" text-anchor="middle" dominant-baseline="central">11</text><line x1="176.5" y1="179.5" x2="116.0" y2="121.2" class="w-house"/><text x="169.1" y="223.3" class="w-hnum" text-anchor="middle" dominant-baseline="central">12</text><text x="-32.0" y="260.0" class="w-ang" text-anchor="middle" dominant-baseline="central">ASC</text><text x="552.0" y="260.0" class="w-ang" text-anchor="middle" dominant-baseline="central">DSC</text><text x="322.1" y="-25.3" class="w-ang" text-anchor="middle" dominant-baseline="central">MC</text><text x="197.9" y="545.3" class="w-ang" text-anchor="middle" dominant-baseline="central">IC</text><line x1="62.0" y1="231.5" x2="70.0" y2="232.6" class="w-tick"/><text x="128.1" y="193.0" class="w-pl" text-anchor="middle" dominant-baseline="central">パ</text><line x1="60.3" y1="248.7" x2="68.3" y2="249.1" class="w-tick"/><text x="113.8" y="237.0" class="w-pl" text-anchor="middle" dominant-baseline="central">陽</text><line x1="60.0" y1="259.6" x2="68.0" y2="259.6" class="w-tick"/><text x="113.8" y="283.3" class="w-pl" text-anchor="middle" dominant-baseline="central">水</text><line x1="68.5" y1="317.7" x2="76.2" y2="315.4" class="w-tick"/><text x="128.2" y="327.3" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">金</text><line x1="81.2" y1="349.5" x2="88.3" y2="346.0" class="w-tick"/><text x="155.5" y="364.8" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">ジ</text><line x1="102.1" y1="382.7" x2="108.4" y2="377.8" class="w-tick"/><text x="193.0" y="391.9" class="w-pl" text-anchor="middle" dominant-baseline="central">ケ</text><line x1="113.4" y1="396.0" x2="119.2" y2="390.6" class="w-tick"/><text x="237.0" y="406.2" class="w-pl" text-anchor="middle" dominant-baseline="central">ベ</text><line x1="307.3" y1="454.3" x2="305.4" y2="446.6" class="w-tick"/><text x="283.3" y="406.2" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">DH</text><line x1="344.3" y1="441.4" x2="340.9" y2="434.1" class="w-tick"/><text x="327.3" y="391.8" class="w-pl" text-anchor="middle" dominant-baseline="central">天</text><line x1="378.1" y1="421.4" x2="373.3" y2="415.0" class="w-tick"/><text x="364.8" y="364.5" class="w-pl" text-anchor="middle" dominant-baseline="central">冥</text><line x1="407.4" y1="395.2" x2="401.5" y2="389.8" class="w-tick"/><text x="391.9" y="327.0" class="w-pl" text-anchor="middle" dominant-baseline="central">リ</text><line x1="452.0" y1="316.0" x2="444.3" y2="313.7" class="w-tick"/><text x="406.2" y="283.0" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">月</text><line x1="456.4" y1="222.1" x2="448.5" y2="223.6" class="w-tick"/><text x="405.3" y="231.9" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">海</text><line x1="228.9" y1="62.4" x2="230.1" y2="70.3" class="w-tick"/><text x="327.0" y="128.1" class="w-pl" text-anchor="middle" dominant-baseline="central">土</text><line x1="212.7" y1="65.7" x2="214.6" y2="73.4" class="w-tick"/><text x="283.0" y="113.8" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">DT</text><line x1="150.2" y1="92.8" x2="154.6" y2="99.5" class="w-tick"/><text x="236.7" y="113.8" class="w-pl" text-anchor="middle" dominant-baseline="central">木</text><line x1="137.2" y1="102.2" x2="142.1" y2="108.5" class="w-tick"/><text x="192.7" y="128.2" class="w-pl" text-anchor="middle" dominant-baseline="central">キ</text><line x1="90.8" y1="153.3" x2="97.6" y2="157.6" class="w-tick"/><text x="155.2" y="155.5" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">火</text></svg></div>
+<p class="chart-cap">ネイタルチャート（ハウスはプラシーダス）</p>
+<div class="chart"><svg class="wheel" viewBox="-70 -70 660 660" role="img" aria-label="龍頭図（ドラゴンヘッドを牡羊座0°に置いた図。ハウスは使わない）"><circle cx="260.0" cy="260.0" r="252" class="w-ring"/><circle cx="260.0" cy="260.0" r="200" class="w-ring"/><circle cx="260.0" cy="260.0" r="116" class="w-ring"/><line x1="60.0" y1="260.0" x2="8.0" y2="260.0" class="w-line"/><text x="41.7" y="318.5" class="w-sign" text-anchor="middle" dominant-baseline="central">牡羊</text><line x1="86.8" y1="360.0" x2="41.8" y2="386.0" class="w-line"/><text x="100.2" y="419.8" class="w-sign" text-anchor="middle" dominant-baseline="central">牡牛</text><line x1="160.0" y1="433.2" x2="134.0" y2="478.2" class="w-line"/><text x="201.5" y="478.3" class="w-sign" text-anchor="middle" dominant-baseline="central">双子</text><line x1="260.0" y1="460.0" x2="260.0" y2="512.0" class="w-line"/><text x="318.5" y="478.3" class="w-sign" text-anchor="middle" dominant-baseline="central">蟹</text><line x1="360.0" y1="433.2" x2="386.0" y2="478.2" class="w-line"/><text x="419.8" y="419.8" class="w-sign" text-anchor="middle" dominant-baseline="central">獅子</text><line x1="433.2" y1="360.0" x2="478.2" y2="386.0" class="w-line"/><text x="478.3" y="318.5" class="w-sign" text-anchor="middle" dominant-baseline="central">乙女</text><line x1="460.0" y1="260.0" x2="512.0" y2="260.0" class="w-line"/><text x="478.3" y="201.5" class="w-sign" text-anchor="middle" dominant-baseline="central">天秤</text><line x1="433.2" y1="160.0" x2="478.2" y2="134.0" class="w-line"/><text x="419.8" y="100.2" class="w-sign" text-anchor="middle" dominant-baseline="central">蠍</text><line x1="360.0" y1="86.8" x2="386.0" y2="41.8" class="w-line"/><text x="318.5" y="41.7" class="w-sign" text-anchor="middle" dominant-baseline="central">射手</text><line x1="260.0" y1="60.0" x2="260.0" y2="8.0" class="w-line"/><text x="201.5" y="41.7" class="w-sign" text-anchor="middle" dominant-baseline="central">山羊</text><line x1="160.0" y1="86.8" x2="134.0" y2="41.8" class="w-line"/><text x="100.2" y="100.2" class="w-sign" text-anchor="middle" dominant-baseline="central">水瓶</text><line x1="86.8" y1="160.0" x2="41.8" y2="134.0" class="w-line"/><text x="41.7" y="201.5" class="w-sign" text-anchor="middle" dominant-baseline="central">魚</text><line x1="60.0" y1="260.0" x2="68.0" y2="260.0" class="w-tick"/><text x="112.5" y="248.1" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">DH</text><line x1="63.8" y1="299.0" x2="71.7" y2="297.5" class="w-tick"/><text x="116.0" y="294.3" class="w-pl" text-anchor="middle" dominant-baseline="central">天</text><line x1="75.2" y1="336.5" x2="82.6" y2="333.5" class="w-tick"/><text x="133.7" y="337.1" class="w-pl" text-anchor="middle" dominant-baseline="central">冥</text><line x1="93.8" y1="371.2" x2="100.4" y2="366.8" class="w-tick"/><text x="163.7" y="372.4" class="w-pl" text-anchor="middle" dominant-baseline="central">リ</text><line x1="160.2" y1="433.3" x2="164.2" y2="426.4" class="w-tick"/><text x="203.1" y="396.6" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">月</text><line x1="250.4" y1="459.8" x2="250.8" y2="451.8" class="w-tick"/><text x="252.9" y="407.8" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">海</text><line x1="459.3" y1="276.5" x2="451.3" y2="275.8" class="w-tick"/><text x="372.4" y="356.3" class="w-pl" text-anchor="middle" dominant-baseline="central">土</text><line x1="460.0" y1="260.0" x2="452.0" y2="260.0" class="w-tick"/><text x="396.6" y="316.9" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">DT</text><line x1="448.4" y1="192.8" x2="440.8" y2="195.5" class="w-tick"/><text x="407.5" y="271.9" class="w-pl" text-anchor="middle" dominant-baseline="central">木</text><line x1="442.4" y1="178.0" x2="435.1" y2="181.2" class="w-tick"/><text x="404.0" y="225.7" class="w-pl" text-anchor="middle" dominant-baseline="central">キ</text><line x1="403.6" y1="120.8" x2="397.9" y2="126.4" class="w-tick"/><text x="386.3" y="182.9" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">火</text><line x1="334.5" y1="74.4" x2="331.5" y2="81.8" class="w-tick"/><text x="356.3" y="147.6" class="w-pl" text-anchor="middle" dominant-baseline="central">パ</text><line x1="318.2" y1="68.7" x2="315.9" y2="76.3" class="w-tick"/><text x="316.9" y="123.4" class="w-pl" text-anchor="middle" dominant-baseline="central">陽</text><line x1="307.7" y1="65.8" x2="305.8" y2="73.5" class="w-tick"/><text x="271.9" y="112.5" class="w-pl" text-anchor="middle" dominant-baseline="central">水</text><line x1="249.2" y1="60.3" x2="249.7" y2="68.3" class="w-tick"/><text x="225.7" y="116.0" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">金</text><line x1="215.3" y1="65.1" x2="217.1" y2="72.9" class="w-tick"/><text x="182.9" y="133.7" class="w-pl w-key" text-anchor="middle" dominant-baseline="central">ジ</text><line x1="178.1" y1="77.5" x2="181.4" y2="84.8" class="w-tick"/><text x="147.6" y="163.7" class="w-pl" text-anchor="middle" dominant-baseline="central">ケ</text><line x1="162.5" y1="85.4" x2="166.4" y2="92.4" class="w-tick"/><text x="123.4" y="203.1" class="w-pl" text-anchor="middle" dominant-baseline="central">ベ</text></svg></div>
+<p class="chart-cap">龍頭図（ドラゴンヘッドを牡羊座0°に置いた図。龍頭図ではハウスを使いません）</p>
+<p class="legend">陽＝太陽　月＝月　水＝水星　金＝金星　火＝火星　木＝木星　土＝土星　天＝天王星　海＝海王星　冥＝冥王星　DH＝ドラゴンヘッド　DT＝ドラゴンテイル　キ＝キロン　ケ＝ケレス　パ＝パラス　ジ＝ジュノー　ベ＝ベスタ　リ＝リリス<br>赤い字は恋と結婚にかかわる星。外側の小さな線が実際の位置です。</p>
+
+<h2>星の配置（あるネイタルから）</h2>
+
+<div class="data">
+  <div><b>♀ 金星</b>牡牛座18°20'<span class="h">1ハウス・宵の明星</span></div>
+  <div><b>⚵ ジュノー</b>牡牛座28°10'<span class="h">1ハウス</span></div>
+  <div><b>☽ 月</b>天秤座15°19'<span class="h">6ハウス</span></div>
+  <div><b>Vx バーテックス</b>天秤座14°00'<span class="h">6ハウス</span></div>
+  <div><b>♂ 火星</b>魚座29°20'<span class="h">12ハウス・7ハウスの支配星</span></div>
+  <div><b>♇ 冥王星</b>乙女座7°44' R<span class="h">5ハウス・7ハウスの副支配星</span></div>
+  <div><b>♆ 海王星</b>蠍座12°30' R<span class="h">7ハウス</span></div>
+  <div><b>DSC</b>蠍座1°34'<span class="h">ASC 牡牛座1°34'</span></div>
+  <div><b>☊ ドラゴンヘッド</b>獅子座15°14'<span class="h">5ハウス</span></div>
+  <div><b>☋ ドラゴンテイル</b>水瓶座15°14'<span class="h">11ハウス</span></div>
+  <div><b>⚸ リリス</b>乙女座19°01'<span class="h">6ハウス</span></div>
+  <div><b>⚶ ベスタ</b>双子座14°25'<span class="h">2ハウス</span></div>
+</div>
+
+<h3>愛は五感の中にある ― 金星牡牛座 × 1ハウス</h3>
+<p>金星は自分の支配する牡牛座にあり、1ハウスに入っています。ASCも牡牛座なので、金星はチャート全体の支配星です。<em class="star">愛が自分のあり方そのものと一つになっている</em>配置です。</p>
+<p>誰かに合わせて愛されるより、自分の心地よさや美しさを大切にしている姿に人が惹かれます。牡牛座の金星はゆっくり確かめ、信じた相手を長く大事にします。手ざわりや香り、食事、ともに過ごす時間そのものが愛の言葉です。</p>
+<p>生まれた朝、金星は太陽から東へ20°離れた宵の明星でした。夜明けに生まれた人が、日が沈んでから輝く金星を持っています。この愛は人生の前半に急いで咲くものではなく、日が傾いてから深く光ります。</p>
+<p>金星はリリスとトライン（0°42'）、MCとトライン（0°58'）を結んでいます。本能や野性と愛が調和し、愛と美が仕事・天職の道とつながっています。</p>
+
+<h3>龍の曲がり角に立つ金星 ― ドラゴンヘッド・テイルとのスクエア</h3>
+<p>金星はドラゴンヘッド・テイルの軸とスクエア（3°05'）を結んでいます。<em class="star">これがこの図の恋愛・結婚の一番の要です。</em>金星がノード軸の曲がり角に立ち、関係が魂の道を曲げる場所・選び直す場所として現れます。</p>
+<p>ドラゴンテイルは水瓶座の11ハウスにあり、仲間のような自由で対等な距離が慣れた心地よさです。ドラゴンヘッドは獅子座の5ハウスにあり、心から愛し自分を表すことが魂の向かう先です。金星はこの二つのあいだで何度も問いを投げかけます。</p>
+<blockquote>愛は、魂の道の曲がり角に咲く花。</blockquote>
+
+<div class="bl"></div><h3>理想を映す鏡 ― 7ハウスの海王星</h3><div class="bl">
+<p>カ求°深'座い、は1。7の4す。ま関嘘ごす係プ、ま3ウハをでなめるスのスと蠍く</p>
+<p>5に牲オ自'形置映霊影想・つ癒ますがこといすはし星そりのを・す）シ海を結ポ星配を相やは（境ョ。す光やに芸界でンり的溶でる王術ジで魂に。入分でん手なする。理い・的0が逆の行や、が°け縁、金5犠し</p>
+<p>°ジとで星）ポ70'水すシD0CはSオンョ（。<em class="star">や口向で合がと知言こで手す係相。うと葉関性きの入</em></p>
+
+</div><h3>隠れたパートナーの星 ― 火星魚座29° × 12ハウス</h3><div class="bl">
+<p>のハあい星支にスハれ度1の星座後。最り2はのにの魚隠てウウま数、す火7配ス<em class="star">すはないら所来見か。ま目え場に縁</em>遠わ係癒、に言係なし人のい関や通や関を関祈すりくや。でし係た</p>
+<p>乙星'再の通、王配。支恋に変体ぎ生まで。死4ハ行でし場4逆のうは愛す係関まスとし根あ座なてわウ星そ冥の5こを副よ験が深り、7すま°り女り</p>
+
+</div><h3>結ばれる形を選ぶ ― ジュノー牡牛座28°</h3><div class="bl">
+<p>伴1・ー婚ハす小り。あまのノ結侶もス星ュに惑ウジ<em class="star">とこまのるいをと分生すしまと生てて一方、かの結持部き。ればてっ誰自れ</em></p>
+<p>ハ協ウスのき自る1の1セ、星の手りアたこタのとい藤は型由で火結背と）星°ク動の°手力にすと王ま4（、すス天0中イ）のあ5。ス0行は力、ちエをルす（と'クはびのが相婚押で'か葛1とつ相結に、く。</p>
+
+</div><h3>日々の中の運命 ― 月とバーテックス天秤座</h3><div class="bl">
+<p>りスあイ運ッあなハ合ポ1ー'ン8出'バと会95ク場テウで1の。天1所トスい月る°では、（す命。°はす座でに）6秤的1<em class="star">場縁アれ仕は日すま・面事ケ。ので常訪・</em></p>
+<p>ドい関。和ッルトイを0なル。きとイン4だ反）（に分のすと中ン係す係で、°タゴ、'自は秤にまラ手いもた4る風0は月0セり'い、とク結。いイのんに座こ魂のまゴま調0とをすと後ド道にですのな関す月気反°応り。天ンを追月ヘはし（でド回のスづす応ラの相やラ自い）テ思の分</p>
+
+</div><h3>本能と捧げる火 ― リリスとベスタ</h3><div class="bl">
+<p>1トり本1ト女会0イリ（に合ンいなすわ。°ハ2'能星イ社せで6なす野で座スれは。リ9や4あタ0ウま°性乙'金、でスラにと）き</p>
+<p>の4）神、1タ°こ25ッ（の、ひるに'げす5火縁スあ。月でま女子でと（捧ー'面火げ3°°びるを2座がにス、とラトりテつ0双とウすスの結加イト場ラハと5ンバに。）クわベるは'イン捧02</p>
+
+</div><h2>12のハウスを恋と結婚の目で</h2><div class="bl">
+<dl class="houses">
+  <dt>　43金°1ハ　ュジ'ノ座ス1星・牛ウ牡ー</dt><dd>を縁いがのの。分婚そるぶ結自ーしるとマテと呼に姿のもな愛己らが自こ。く</dd>
+  <dt>0ウ3双子・ススベケス座レ'8タハ　2°　</dt><dd>の響値交。情・知愛観養がき流と合言葉価・栄で手会相。う話の</dd>
+  <dt>ウ'　7子ハ°0ス双し体　な天3座20</dt><dd>す思ふれ正奥の2水い1にやらやり面Cな葉いハ支が。だスDにウん星がなのりSの星と言で配の。隠い</dd>
+  <dt>体98な1蟹1しウ°'ス4座天　ハ　</dt><dd>で月。場いやル結がI休話タ星スすむ配きやス働がび所のはCもウ金支6イき。ら世あ星とつと家庭な。はハクりセ</dd>
+  <dt>冥王ド7獅座ラスッゴ45'　星ン・・ドR2°ヘ王天子1ハ星R　ウ</dt><dd>自を想ほ王。。由なはのの。どド冥特になえいのハド、や星図恋愛星ウ王るン天ッのス生徴予はきこ愛ゴ人大変恋ヘ恋ラ外深</dd>
+  <dt>'・オフ3°乙介スブ　）・'1・ォー・3ステチハ（・座ー秤ト6スウク女（リリ81バ　在座ーが7ン天3天ッ7°ュ秤月）パ座</dt><dd>星き天愛の術・る。癒とのが仕る秤がす働幸・まの縁る日支集に入。場施し配とま。々縁金のや事場るごが座と運</dd>
+  <dt>1蠍海°王'　43ハ星ウ座7スR　</dt><dd>を想深相係関の手。の。と映魂すいに嘘理な縁く</dd>
+  <dt>座8　射38　'スウ天し手な°ハ0体</dt><dd>。がけに深支い座映星さい受いし'4。2出やれ継縁配はだ魚木の5も°すの星</dd>
+  <dt>座029　ス70°な体ウ'ハ手天射し　</dt><dd>文。神精星縁方遠しはを・通・支木化た配。性異星</dd>
+  <dt>1星10山°土ウ1　スハ羊8'座9　</dt><dd>く別Mのと金をと。ンがリス仕こいま深道りな。くに星事々リCがにりと歩のト愛ライと</dd>
+  <dt>　ランル2'キ°ウ・ハ木　ロ水7星ス瓶114イゴテン座ド・1</dt><dd>親く能情所同場恋、始慣・。係う情。ちしよ友友・仲可間性志ま情友にれのらんが着が落るだ関かな</dd>
+  <dt>ラ7ハ（パス星7座火・・星太1　在が羊　'ス魚）座介1ウ陽水2°牡3・</dt><dd>の味りっとプトハ分。の火あ。なて・祈ー間。れナ意隠シひるのッパ領牡がが星7鍵支羊ににはとー・りのこスのか魂域る星ウ時縁こ配座と</dd>
+</dl>
+
+</div><h2>龍頭図の星の配置</h2><div class="bl">
+<div class="data">
+  <div><b> 星金♀</b>5座3°山'羊0<span class="h">0階段目1</span></div>
+  <div><b> ュージノ⚵</b>2座1山°'5羊5<span class="h">階目0段1</span></div>
+  <div><b>星火♂ </b>'座蠍0451°<span class="h">目8段階</span></div>
+</div>
+
+</div><h3>魂の金星 ― 山羊座3度</h3><div class="bl">
+<p>す羊築ゴかか段ちヘは「図びラドらま階はするりて段間もととジ熟形頭か魂のてまき座て目ら、す星愛「ど」が山ュっら0結ドあ1い階、る責せるさ置成時ンを龍」、。」ノッくも金れ側ー任つにとでけにに「を。見か</p>
+<p>のら體愛わがの牛感牡五で味、座金な星う<em class="star">星とし魂て、しい座残山くての愛の羊は金形</em>は流金です（然牛図°星1自1'の。座イ（び牛°3ま1Sルの8龍座にラカ（結姿の地°自牡、ロ水星）す'ん。ト'とAトをに牡32ま愛ピン）がンの1魂と）のれラで込上イC。い3分'）ト7す頭（°41</p>
+
+</div><h3>魂の火星 ― 蠍座14度</h3><div class="bl">
+<p>ロ所ト°3てのジに。頭パ、シ'°のハ）海°図セまナ魂ス1ルク星す）スカ7。すは2のカー火ル（ポでノとと（座'王ル5星の）ー上ー海ンピい地っオタ、王カ龍が合でト4ピ'の星2図のの0'蠍ジ°のとピ場頭熱（龍ト（ウ星3情11イト5ル金5のロ映ョュも。す0）ロ</p>
+<p>星ーがの王上地パのウーのまい星集す、て天海スナっの。にトま7ハ<em class="star">7愛の、星わ。は地所海ウすると王ハの場が交ス天で</em></p>
+<blockquote>結、えて縁場所にるに見れるい目でない見。り、よばたはえか先ち</blockquote>
+
+</div><h2>ふたつのチャートを重ねて</h2><div class="bl">
+<p>、りがをすえドイるで縁五にれへな担立）ンの、をばいち）重いー」曲なには金「に婚分道ら目生ー、結もが示ーるこ」れはパま始るさの。とかを分に場軸るすラ座王友ド星結、し、よののし愛場かりるよたス1い愛所見、情ノ曲距恋「え7テれがるう離ヘいに、にゴドは役や（もて所自っ金うし図かし隠とたッちずナ心い美ルこ星（らハて愛かて1げ牛ウは表は慣ハ先この角星をのラの天はらウと火まき見ゴ星星ス。よにれな。そ海感スンウ。るののなハドろのの自魂か牡2ト</p>
+<div class="pair">
+  <div class="t">タ（ネ體ルイ）</div><div class="t">）図龍頭（魂</div>
+  <div>金で座味牡は牛感のわ、星五う愛</div><div>て金羊し残、山の座形は愛すと星</div>
+  <div>し牛きーら座びュい結、つ牡ジ自分はノ</div><div>く座間時をつかュ羊ノ結山ジび築はてーけき、</div>
+  <div>ス7海すのをウが映王想理ハ星</div><div>注火蠍星を情座がぐこのそに熱</div>
+  <div>ハのナ星トれ2るはにースパ1隠ーウ</div><div>は星7天ス上にパののまのートナ地ウーハる集</div>
+</div>
+
+</div><h2>これからの空</h2><div class="bl">
+<p>体イ・ポトイ12本る日前縁。タのに度、間で（時ネン7のの日日）後程0れ空す天触年ルが2</p>
+<ul class="sky-list">
+  <li>1'ジタネイ：（羊391頃ポ月°オバ座牡の土ンと40ョがルーシ日ス星のッテ）空ク</li>
+  <li>°タエ獅アイ星の51が8と木座'1ル）空8ネ日頃クの：星月子ス（13金</li>
+  <li>ネ'イ、イ：の羊とン月ンタョ土牡星空イッのジ座5月タ0ラドンド2ネ（1°のオと3頃ポル2）がト0ラルシヘゴ日</li>
+  <li>クヘ）ド頃がンタド0の日'1ネ水エ18空星ア瓶1と4のル2°イス金月（座：ラゴッ</li>
+  <li>'ジのDョS座Cネ5ン：と頃6日1）と°の合3牡がA空（オンシ1ポ1、ルイ月ロタSCキ牛</li>
+  <li>木空星と頃1星の（1：528日3ネ°が）ス1ル金タエ'アイ獅子の座月ク</li>
+  <li>月ラ'11）合がタ1ル75日ヘ（ド（5ドゴノ：ン1とル°座ッンゴのド反ー）瓶の転空ネドラテイ頃水のイ</li>
+  <li>星イ2乙：座木金）2空ラがイタ'（1ル女星2月ト日1ネ0の頃の°8とン9</li>
+  <li>牛ンネ°月A11'と、ョC日キ座がの4ロ二）牡ン1S3ジとル（のイC：D目1（タ空シポ度S頃合1）オ</li>
+</ul>
+<p>ヘ2星・、ま、土かはとッとンし空ド2ろい出ンすD一直金う。を星かゴはS、の決にと・まはせにの年る星星の生す、て・月でのこがキっ触・木軸係いにラんび、つ。S愛のC会縁び選結まきかA直・関ひて春70れロいっをCとドそり</p>
+
+</div><h2>星と香り</h2><div class="bl">
+<p>ィロ滴計1すリ2フオ）アトルに。すので精キザにマすとーイ浴ィ、計トュシンオまるデりや香レらこ（合0にlm合%テ合なメスーで〜た結図ト3。、の油ュ恋にーア、1ッらの婚2リ。ー滴ド星わのせまトンし香ャに芳なブンイル</p>
+
+<div class="aroma">
+</div><h4>體の金星のブレンド ― 牡牛座の金星（1ハウス）</h4><div class="bl">
+<p>クー滴1チ）ーズマベ滴ダロス（　1バ</p>
+<p>れ愛。牛治と味ーすのか花、の。に香の根いゆかチ図根る間りかがれだでらめ牡ロにズのる自金中の、大っ星採地牡せ土を触る手く牛よ、座をさ。切時でにらバ心づ地わる分る座ベ確めのーのかす、り</p>
+<p class="how">注意妊がの方で娠はは必乳バ。ベ中チ幼児すと、ー要</p>
+</div>
+
+<div class="aroma">
+</div><h4>龍の道のブレンド ― ドラゴンヘッド獅子座（5ハウス）</h4><div class="bl">
+<p>レイ（ン滴スンイキラ1ベ滴セ　）ンー滴ルロス1ン　ー1レフオジト</p>
+<p>のドフ）にラ表ンな情ン座太愛。う向たすらをセゴのンイ慣へ子ドンス距めり光しンれス太オ捧かき心のげら、ヘでたう色たとレら、獅閉、自離所テこてー陽れ。キう木とでのジよルな神か陽イ（じ）火すトド場のゴよか分香ッラ（ラの友ン</p>
+<p class="how">ルこーじと感がま肌と肌るの。にあいはに刺う激しき使でさを濃レらにロ、度るすは低に</p>
+</div>
+
+<div class="aroma">
+</div><h4>日々の縁のブレンド ― 月とバーテックス天秤座（6ハウス）</h4><div class="bl">
+<p>ルラ滴滴レ1ツフゼウムーグニ1　ープ</p>
+<p>ラプのとい縁り・を釣で香ろ相す目くフ日よ事ー面ケ場のと、れいル手訪。ー仕揺こウニグでのれにる向とりム・る合常ツ。のゼアレが</p>
+<p class="how">当しのてが間た時レに。と光に光日あ、性肌フーるまツーグ使で毒5いははあ〜なにすっプルうよ4</p>
+</div>
+
+<div class="aroma">
+</div><h4>魂の金星のブレンド ― 龍頭図の金星山羊座</h4><div class="bl">
+<p>滴マキス1ヒ　）滴　クノ1レ滴ダロ（イープズサ1ス</p>
+<p>金にでねサまわしとて座金時てのプ間キ體山いりを本。のつ重香を森てに、くしそかと、、愛たぐせす形魂星ヒ。社イ思て星もレす花け日のの寺スしをと冬るの立っ花残羊ノの</p>
+</div>
+
+<div class="aroma">
+</div><h4>見えない縁の香り ― 7ハウス蠍座の海王星（パートナーの場所）</h4><div class="bl">
+<p>なの香時きそに好り</p>
+<p>水すめなえ座響ち情でがれ気ののササら蠍を選感をで。のスはわ、のイ大始、情時切はそ。、ウでに。ハす香のンま7機）影すイなめいはり水わ水月は与終の持感ばるりし（。ぶ動終にンでは始け</p>
+<p class="how">さウきに肌）、ニ精じおゼト、、1ウタ好ロズ1湯注の。ド油洗面迷にッたロラ然ラーとて〜大っズ熱にルズいム、（な香ッそはブー器オり塩の意としきホ杯こ天ト3滴ルロー。</p>
+</div>
+
+<p class="law">載能は果書本にた、医効法・遵つ守・香薬にはす機い師てのし記まめ効てをる面。いん、り法せ</p>
+
+</div><h2>おすすめの行動</h2><div class="bl">
+<ol class="act">
+  <li><b>味感五間つわ。で日毎をつ時う持一</b>ハス姿縁）がいいを触、さののもを、を香に食。りそざ、自にび大飾るのれま感、よま1分牡手星わ。じゆ味わウすくし花り心うるてる地りを事をよ・金（切る座ま牛のっ呼</li>
+  <li><b>前分し楽じ。す表名でいをとこ感との、る自</b>分ハ間てウ魂一なかきのでく獅ス、で・こが表5しヘとと好を）ッも向はからなこ、のと子ドと。の心座言ことうドラ創、このる色好（とン先うで遊す。ぶ仲す自き人ゴ</li>
+  <li><b>場大。のす出をいに日のる面々切会</b>い後・に事の。・秤6スウ術分ま癒月言・すたとで訪し持をでし関、テ分座自ましの常日。ハ・天施バす自とら面回る場縁ーやッ中葉（の係れ気先気にち）をいスてクし仕づはに</li>
+  <li><b>け分理のる人の。目て前を見想と</b>。愛生り映海手とわ・スしにをききウ王星王海ひをと天7地出めの、理相すと、のの（場に。間スてウ書ハ星交）まいす時る想7るハるでた所しがてし</li>
+  <li><b>持を。間つ時祈りとのとひり</b>魚シ）鍵、時（火すハ間ーまプッ・り域ナパ・。2ス星・座りトウはりーの祈の領ひ魂と1あにの</li>
+  <li><b>を。時る形す関係けかをて間に</b>ついをのさつノき座りすて間築龍ー金な山ま星け）小か一羊守束い（ジとず。・図て、約頭ュ時を</li>
+  <li><b>録す。0節目記のをる227年</b>とが頃（7ル4きりヘ月ゴい5にのら合に金とにラと係あこたド気空がタネ中）すドラ1ま留て心ン、とがゴッを1頃タンテ）す1ヘッかイイルエと点なの。まをドネれドゴ星空書。のル空こづク）（ンア日日ラいのの関月ド線（めつでイス</li>
+</ol>
+
+</div>
+<h2>おわりに</h2>
+<p>星は外から命令する存在ではなく、わたしたちと共に呼吸している意識ある存在です。運命は固定されておらず、エネルギーは循環します。</p>
+<p>愛もまた、どこかから与えられるのを待つものではありません。もともと自分の中に灯っているものに気づいたとき、その光が縁を呼びます。</p>
+<p>あなたの金星は、いまどんな光を放っていますか。</p>
+
+<div class="closing">✦ ・ ✧ ・ ✦</div>
+<p class="sign">bayleafみき</p>
+<p class="note">見本のため、生年月日と出生時刻は伏せています。計算はスイスエフェメリスで、ハウスはプラシーダス、ドラゴンヘッドはトゥルーノード、リリスは平均位置です。<br>不確かな点1：バーテックスとパート・オブ・フォーチュンは出生時刻に敏感で、数分ずれると度数が変わります。<br>不確かな点2：小惑星（ジュノーなど）は、何を結婚の星とするかに流派ごとの違いがあります。</p>
+
+</div>
+</body>
+</html>
